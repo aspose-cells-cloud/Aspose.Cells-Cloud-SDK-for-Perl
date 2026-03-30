@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::SplitTableRequest;
+package AsposeCellsCloud::Request::AcceptAllRevisionsInRemoteSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,19 +60,14 @@ sub new {
 
 
 # Run Operation Request
-# SplitTableRequest.Spreadsheet : Upload spreadsheet file.  ,
-# SplitTableRequest.worksheet : Worksheet containing the table.  ,
-# SplitTableRequest.tableName : Data table that needs to be split.  ,
-# SplitTableRequest.splitColumnName : Column name to split by.  ,
-# SplitTableRequest.saveSplitColumn : Whether to keep the data in the split column.  ,
-# SplitTableRequest.splitRowNumber :   ,
-# SplitTableRequest.toNewWorkbook : Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook.  ,
-# SplitTableRequest.toMultipleFiles : true - Exports table data as **multiple separate files** (returned as ZIP archive);false - Stores all data in a **single file** with multiple sheets. Default: false.  ,
-# SplitTableRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# SplitTableRequest.outStorageName : Output file Storage Name.  ,
-# SplitTableRequest.fontsLocation : Use Custom fonts.  ,
-# SplitTableRequest.region : The spreadsheet region setting.  ,
-# SplitTableRequest.password : The password for opening spreadsheet file.   
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.name :   ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.folder :   ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.fontsLocation : Use Custom fonts.  ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -82,8 +77,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'split_table' } = { 
-    	summary => 'Split an Excel worksheet tale into multiple sheets by column value.',
+    __PACKAGE__->method_documentation->{ 'accept_all_revisions_in_remote_spreadsheet' } = { 
+    	summary => '',
         params => $params,
         returns => 'string',
     };
@@ -95,7 +90,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/split/table';
+    my $_resource_path = 'v4.0/cells/{name}/accept-all-revisions';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -107,34 +102,18 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
- 
-    if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
 
-    if(defined $self->table_name){
-        $query_params->{'tableName'} = $client->to_query_value($self->table_name);      
-    }
-
-    if(defined $self->split_column_name){
-        $query_params->{'splitColumnName'} = $client->to_query_value($self->split_column_name);      
-    }
-
-    if(defined $self->save_split_column){
-        $query_params->{'saveSplitColumn'} = $client->to_query_value($self->save_split_column);      
-    }
-
-    if(defined $self->split_row_number){
-        $query_params->{'splitRowNumber'} = $client->to_query_value($self->split_row_number);      
-    }
-
-    if(defined $self->to_new_workbook){
-        $query_params->{'toNewWorkbook'} = $client->to_query_value($self->to_new_workbook);      
-    }
-
-    if(defined $self->to_multiple_files){
-        $query_params->{'toMultipleFiles'} = $client->to_query_value($self->to_multiple_files);      
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
     }
 
     if(defined $self->out_path){
@@ -158,10 +137,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -174,59 +149,24 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
-     	format => '',
-     	read_only => '',
-     		},
-     'worksheet' => {
-     	datatype => 'string',
-     	base_name => 'worksheet',
-     	description => 'Worksheet containing the table.',
-     	format => '',
-     	read_only => '',
-     		},
-     'table_name' => {
-     	datatype => 'string',
-     	base_name => 'tableName',
-     	description => 'Data table that needs to be split.',
-     	format => '',
-     	read_only => '',
-     		},
-     'split_column_name' => {
-     	datatype => 'string',
-     	base_name => 'splitColumnName',
-     	description => 'Column name to split by.',
-     	format => '',
-     	read_only => '',
-     		},
-     'save_split_column' => {
-     	datatype => 'string',
-     	base_name => 'saveSplitColumn',
-     	description => 'Whether to keep the data in the split column.',
-     	format => '',
-     	read_only => '',
-     		},
-     'split_row_number' => {
-     	datatype => 'int',
-     	base_name => 'splitRowNumber',
+     	base_name => 'name',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'to_new_workbook' => {
+     'folder' => {
      	datatype => 'string',
-     	base_name => 'toNewWorkbook',
-     	description => 'Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook.',
+     	base_name => 'folder',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'to_multiple_files' => {
+     'storage_name' => {
      	datatype => 'string',
-     	base_name => 'toMultipleFiles',
-     	description => 'true - Exports table data as **multiple separate files** (returned as ZIP archive);false - Stores all data in a **single file** with multiple sheets. Default: false.',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
      	format => '',
      	read_only => '',
      		},
@@ -269,14 +209,9 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
-    'worksheet' => 'worksheet',
-    'table_name' => 'tableName',
-    'split_column_name' => 'splitColumnName',
-    'save_split_column' => 'saveSplitColumn',
-    'split_row_number' => 'splitRowNumber',
-    'to_new_workbook' => 'toNewWorkbook',
-    'to_multiple_files' => 'toMultipleFiles',
+    'name' => 'name',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'fonts_location' => 'fontsLocation',
