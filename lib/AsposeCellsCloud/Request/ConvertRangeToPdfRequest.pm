@@ -66,7 +66,7 @@ sub new {
 # ConvertRangeToPdfRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ConvertRangeToPdfRequest.outStorageName : Output file Storage Name.  ,
 # ConvertRangeToPdfRequest.fontsLocation : Use Custom fonts.  ,
-# ConvertRangeToPdfRequest.region : The spreadsheet region setting.  ,
+# ConvertRangeToPdfRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ConvertRangeToPdfRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -194,7 +194,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

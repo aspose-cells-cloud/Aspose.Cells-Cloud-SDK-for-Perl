@@ -64,7 +64,7 @@ sub new {
 # CompressSpreadsheetRequest.level : Specifies the compression level to be applied to the spreadsheet. The level should be within a valid range (e.g., 0-9 for most compression algorithms, where 0 is no compression and 9 is maximum compression).  ,
 # CompressSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # CompressSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# CompressSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# CompressSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # CompressSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -170,7 +170,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

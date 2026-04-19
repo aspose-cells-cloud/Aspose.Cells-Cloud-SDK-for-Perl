@@ -69,7 +69,7 @@ sub new {
 # ExportTableAsFormatRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ExportTableAsFormatRequest.outStorageName : Output file Storage Name.  ,
 # ExportTableAsFormatRequest.fontsLocation : Use Custom fonts.  ,
-# ExportTableAsFormatRequest.region : The spreadsheet region setting.  ,
+# ExportTableAsFormatRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ExportTableAsFormatRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -234,7 +234,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

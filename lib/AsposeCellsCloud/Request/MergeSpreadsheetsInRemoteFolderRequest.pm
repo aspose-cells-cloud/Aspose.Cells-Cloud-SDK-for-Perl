@@ -68,7 +68,7 @@ sub new {
 # MergeSpreadsheetsInRemoteFolderRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # MergeSpreadsheetsInRemoteFolderRequest.outStorageName : Output file Storage Name.  ,
 # MergeSpreadsheetsInRemoteFolderRequest.fontsLocation : Use Custom fonts.  ,
-# MergeSpreadsheetsInRemoteFolderRequest.region : The spreadsheet region setting.  ,
+# MergeSpreadsheetsInRemoteFolderRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # MergeSpreadsheetsInRemoteFolderRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -218,7 +218,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

@@ -65,7 +65,7 @@ sub new {
 # AggregateCellsByColorRequest.range : Specified range.  ,
 # AggregateCellsByColorRequest.operation : Specify calculation operation methods, including Sum, Count, Average, Min, and Max.  ,
 # AggregateCellsByColorRequest.colorPosition : Indicates the content to sum and count based on background color and/or font color.  ,
-# AggregateCellsByColorRequest.region : The spreadsheet region setting.  ,
+# AggregateCellsByColorRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # AggregateCellsByColorRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -182,7 +182,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

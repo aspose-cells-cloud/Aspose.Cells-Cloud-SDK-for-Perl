@@ -65,7 +65,7 @@ sub new {
 # SearchBrokenLinksInRemoteRangeRequest.cellArea : Specify the cell area for the lookup  ,
 # SearchBrokenLinksInRemoteRangeRequest.folder : The folder path where the workbook is stored.  ,
 # SearchBrokenLinksInRemoteRangeRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
-# SearchBrokenLinksInRemoteRangeRequest.region : The spreadsheet region setting.  ,
+# SearchBrokenLinksInRemoteRangeRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # SearchBrokenLinksInRemoteRangeRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -186,7 +186,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

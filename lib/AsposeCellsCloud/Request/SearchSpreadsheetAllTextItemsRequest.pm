@@ -61,7 +61,7 @@ sub new {
 
 # Run Operation Request
 # SearchSpreadsheetAllTextItemsRequest.Spreadsheet : Upload spreadsheet file.  ,
-# SearchSpreadsheetAllTextItemsRequest.region : The spreadsheet region setting.  ,
+# SearchSpreadsheetAllTextItemsRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # SearchSpreadsheetAllTextItemsRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -134,7 +134,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

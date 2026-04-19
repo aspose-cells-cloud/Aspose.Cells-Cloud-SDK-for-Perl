@@ -70,7 +70,7 @@ sub new {
 # ImportCSVDataIntoSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ImportCSVDataIntoSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
 # ImportCSVDataIntoSpreadsheetRequest.fontsLocation : Use Custom fonts.  ,
-# ImportCSVDataIntoSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# ImportCSVDataIntoSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ImportCSVDataIntoSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -243,7 +243,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

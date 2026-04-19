@@ -66,7 +66,7 @@ sub new {
 # SearchContentInRemoteWorksheetRequest.ignoringCase : Ignore the text of the search.  ,
 # SearchContentInRemoteWorksheetRequest.folder : The folder path where the workbook is stored.  ,
 # SearchContentInRemoteWorksheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
-# SearchContentInRemoteWorksheetRequest.region : The spreadsheet region setting.  ,
+# SearchContentInRemoteWorksheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # SearchContentInRemoteWorksheetRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -196,7 +196,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

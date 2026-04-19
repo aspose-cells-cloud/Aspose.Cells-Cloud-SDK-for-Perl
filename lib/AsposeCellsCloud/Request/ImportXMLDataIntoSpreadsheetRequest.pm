@@ -68,7 +68,7 @@ sub new {
 # ImportXMLDataIntoSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ImportXMLDataIntoSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
 # ImportXMLDataIntoSpreadsheetRequest.fontsLocation : Use Custom fonts.  ,
-# ImportXMLDataIntoSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# ImportXMLDataIntoSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ImportXMLDataIntoSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -219,7 +219,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

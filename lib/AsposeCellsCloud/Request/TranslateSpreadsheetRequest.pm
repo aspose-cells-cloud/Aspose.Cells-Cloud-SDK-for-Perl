@@ -62,7 +62,7 @@ sub new {
 # Run Operation Request
 # TranslateSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
 # TranslateSpreadsheetRequest.targetLanguage : The target language code for translation (e.g., "es", "fr", "de").  ,
-# TranslateSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# TranslateSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # TranslateSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -146,7 +146,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

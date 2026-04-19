@@ -64,7 +64,7 @@ sub new {
 # AI task decomposition: Convert user objectives to sequential action plans with formatted file export.
 # 
 # @TaskDescription  string (required)  Decompose user task description.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -102,7 +102,7 @@ sub decompose_user_task{
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @targetLanguage  string (required)  The target language code for translation (e.g., "es", "fr", "de").  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -140,7 +140,7 @@ sub translate_spreadsheet{
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @targetLanguage  string (required)  The target language code for translation (e.g., "es", "fr", "de").  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -181,7 +181,7 @@ sub translate_text_file{
 # @range  string   Specified range.  
 # @operation  string   Specify calculation operation methods, including Sum, Count, Average, Min, and Max.  
 # @colorPosition  string   Indicates the content to sum and count based on background color and/or font color.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -222,7 +222,7 @@ sub aggregate_cells_by_color{
 # @value  string (required)    
 # @worksheet  string     
 # @range  string     
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -370,7 +370,7 @@ sub check_cloud_service_health{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -414,7 +414,7 @@ sub export_spreadsheet_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -459,7 +459,7 @@ sub export_worksheet_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -504,7 +504,7 @@ sub export_chart_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -549,7 +549,7 @@ sub export_table_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -590,7 +590,7 @@ sub export_range_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -630,7 +630,7 @@ sub convert_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -670,7 +670,7 @@ sub convert_spreadsheet_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -710,7 +710,7 @@ sub convert_spreadsheet_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -752,7 +752,7 @@ sub convert_spreadsheet_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -793,7 +793,7 @@ sub convert_worksheet_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -834,7 +834,7 @@ sub convert_worksheet_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -875,7 +875,7 @@ sub convert_worksheet_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -916,7 +916,7 @@ sub convert_worksheet_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -954,7 +954,7 @@ sub convert_worksheet_to_html{
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @worksheet  string (required)  worksheet name of spreadsheet.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -997,7 +997,7 @@ sub convert_worksheet_to_html_table{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1039,7 +1039,7 @@ sub convert_table_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1081,7 +1081,7 @@ sub convert_table_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1123,7 +1123,7 @@ sub convert_table_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1165,7 +1165,7 @@ sub convert_table_to_html{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1209,7 +1209,7 @@ sub convert_table_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1251,7 +1251,7 @@ sub convert_range_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1293,7 +1293,7 @@ sub convert_range_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1335,7 +1335,7 @@ sub convert_range_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1377,7 +1377,7 @@ sub convert_range_to_html{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1420,7 +1420,7 @@ sub convert_range_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1462,7 +1462,7 @@ sub convert_chart_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1506,7 +1506,7 @@ sub convert_chart_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1548,7 +1548,7 @@ sub save_spreadsheet_as{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1592,7 +1592,7 @@ sub merge_spreadsheets{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1637,7 +1637,7 @@ sub merge_spreadsheets_in_remote_folder{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1680,7 +1680,7 @@ sub merge_remote_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1727,7 +1727,7 @@ sub split_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1772,7 +1772,7 @@ sub split_table{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1818,7 +1818,7 @@ sub split_remote_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1862,7 +1862,7 @@ sub import_data_into_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1906,7 +1906,7 @@ sub import_json_data_into_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -1952,7 +1952,7 @@ sub import_xml_data_into_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2027,7 +2027,7 @@ sub get_public_key{
 # @template  string   template: Optional.If provided, the new spreadsheet will be created based on the specified template.This can be useful for applying predefined layouts and styles.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2064,7 +2064,7 @@ sub create_spreadsheet{
 # Fetches a complete list of worksheets from the currently active local spreadsheet.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2106,7 +2106,7 @@ sub get_worksheets_with_local_spreadsheet{
 # @sheetName  string   Specifies the type of worksheet to be added.If not provided, a default worksheet type will be used.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2146,7 +2146,7 @@ sub add_worksheet_to_spreadsheet{
 # @sheetName  string (required)  Specifies the name or identifier of the worksheet to be deleted. This parameter is required and must match the name of an existing worksheet in the workbook.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2187,7 +2187,7 @@ sub delete_worksheet_from_spreadsheet{
 # @targetName  string (required)  The new name for the worksheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2228,7 +2228,7 @@ sub rename_worksheet_in_spreadsheet{
 # @position  int (required)  Move the worksheet to the position  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2268,7 +2268,7 @@ sub move_worksheet_in_spreadsheet{
 # @level  int (required)  Specifies the compression level to be applied to the spreadsheet. The level should be within a valid range (e.g., 0-9 for most compression algorithms, where 0 is no compression and 9 is maximum compression).  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2307,7 +2307,7 @@ sub compress_spreadsheet{
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2347,7 +2347,7 @@ sub repair_spreadsheet{
 # @worksheet  string (required)  worksheet name  
 # @folder  string   The cloud storage path of the spreadsheet.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2385,7 +2385,7 @@ sub get_merged_cells_in_remoted_worksheet{
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @worksheet  string (required)    
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2425,7 +2425,7 @@ sub get_merged_cells_in_worksheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2467,7 +2467,7 @@ sub accept_all_revisions{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2508,7 +2508,7 @@ sub accept_all_revisions_in_remote_spreadsheet{
 # @modifyPassword  string (required)  Sets the protected password to modify the file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.   
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.   
 #
 {
     my $params = {
@@ -2548,7 +2548,7 @@ sub protect_spreadsheet{
 # @modifyPassword  string (required)  Sets the protected password to modify the file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.   
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.   
 #
 {
     my $params = {
@@ -2587,7 +2587,7 @@ sub unprotect_spreadsheet{
 # @password  string (required)    
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.   
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.   
 #
 {
     my $params = {
@@ -2625,7 +2625,7 @@ sub spreadsheet_digitalsignature{
 # @name  string (required)  The name of the workbook file.  
 # @folder  string (required)  The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2662,7 +2662,7 @@ sub search_all_text_items_in_remote_spreadsheet{
 # Get all text items in the remote spreadsheet.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2703,7 +2703,7 @@ sub search_spreadsheet_all_text_items{
 # @ignoringCase  boolean   Ignore the text of the search.  
 # @worksheet  string   Specify the worksheet for the lookup.  
 # @cellArea  string   Specify the cell area for the lookup  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2744,7 +2744,7 @@ sub search_spreadsheet_content{
 # @ignoringCase  boolean   Ignore the text of the search.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2786,7 +2786,7 @@ sub search_content_in_remote_spreadsheet{
 # @ignoringCase  boolean   Ignore the text of the search.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2829,7 +2829,7 @@ sub search_content_in_remote_worksheet{
 # @ignoringCase  boolean   Ignore the text of the search.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2870,7 +2870,7 @@ sub search_content_in_remote_range{
 # @replaceText  string (required)  Specify the replace content.  
 # @worksheet  string   Specify the worksheet for the replace.  
 # @cellArea  string   Specify the cell area for the replace.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2911,7 +2911,7 @@ sub replace_spreadsheet_content{
 # @replaceText  string (required)  Specify the replace content.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2953,7 +2953,7 @@ sub replace_content_in_remote_spreadsheet{
 # @replaceText  string (required)  The replaced text.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -2996,7 +2996,7 @@ sub replace_content_in_remote_worksheet{
 # @cellArea  string (required)  The cell area for the replace.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3035,7 +3035,7 @@ sub replace_content_in_remote_range{
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @worksheet  string   Specify the worksheet for the replace.  
 # @cellArea  string   Specify the cell area for the replace.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3076,7 +3076,7 @@ sub search_spreadsheet_broken_links{
 # @cellArea  string   Specify the cell area for the lookup  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3116,7 +3116,7 @@ sub search_broken_links_in_remote_spreadsheet{
 # @worksheet  string (required)  Specify the worksheet for the lookup.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3157,7 +3157,7 @@ sub search_broken_links_in_remote_worksheet{
 # @cellArea  string (required)  Specify the cell area for the lookup  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3194,7 +3194,7 @@ sub search_broken_links_in_remote_range{
 # Get the specifications
 # 
 # @version  string (required)    
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3230,7 +3230,7 @@ sub spec{
 #
 # 
 # 
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3278,7 +3278,7 @@ sub codegen_spec{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3320,7 +3320,7 @@ sub trim_character{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3365,7 +3365,7 @@ sub update_word_case{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3411,7 +3411,7 @@ sub remove_characters{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3455,7 +3455,7 @@ sub remove_characters_by_position{
 # @range  string     
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3500,7 +3500,7 @@ sub remove_duplicate_substrings{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3544,7 +3544,7 @@ sub add_text{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3591,7 +3591,7 @@ sub convert_text{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3637,7 +3637,7 @@ sub extract_text{
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3676,7 +3676,7 @@ sub split_text{
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3715,7 +3715,7 @@ sub remove_spreadsheet_blank_rows{
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3754,7 +3754,7 @@ sub remove_spreadsheet_blank_columns{
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3796,7 +3796,7 @@ sub remove_spreadsheet_blank_worksheets{
 # @table  string   Table name that need deduplication.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3839,7 +3839,7 @@ sub remove_duplicates{
 # @range2  string (required)  Specify exchange data target.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3881,7 +3881,7 @@ sub swap_range{
 # @Horizontal  boolean   Horizontal/Vertical Flip.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
-# @region  string   The spreadsheet region setting.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
 {
@@ -3902,6 +3902,131 @@ sub swap_range{
 # @return string
 #
 sub flip_data{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# TransposeDataRequest
+#
+# Switch rows and columns in the spreadsheet.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  The worksheet name.  
+# @cellArea  string (required)  A specified data range  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'TransposeDataRequest',
+            description => 'TransposeData Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'transpose_data' } = { 
+    	summary => 'Switch rows and columns in the spreadsheet.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub transpose_data{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# UnpivotRangeRequest
+#
+# Switch rows and columns in the spreadsheet.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  The worksheet name.  
+# @cellArea  string (required)  A specified data range  
+# @skipEmptyValue  boolean     
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'UnpivotRangeRequest',
+            description => 'UnpivotRange Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'unpivot_range' } = { 
+    	summary => 'Switch rows and columns in the spreadsheet.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub unpivot_range{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# UnpivotTableRequest
+#
+# Switch rows and columns in the spreadsheet.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  The worksheet name.  
+# @index  int (required)  A specified data range  
+# @skipEmptyValue  boolean     
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'UnpivotTableRequest',
+            description => 'UnpivotTable Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'unpivot_table' } = { 
+    	summary => 'Switch rows and columns in the spreadsheet.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub unpivot_table{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );

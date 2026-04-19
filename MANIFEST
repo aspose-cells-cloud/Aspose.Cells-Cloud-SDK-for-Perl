@@ -542,6 +542,9 @@ docs/RemoveSpreadsheetBlankWorksheetsRequest.md
 docs/RemoveDuplicatesRequest.md
 docs/SwapRangeRequest.md
 docs/FlipDataRequest.md
+docs/TransposeDataRequest.md
+docs/UnpivotRangeRequest.md
+docs/UnpivotTableRequest.md
 docs/DownloadFileRequest.md
 docs/UploadFileRequest.md
 docs/CopyFileRequest.md
@@ -1443,6 +1446,9 @@ lib/AsposeCellsCloud/Request/RemoveSpreadsheetBlankWorksheetsRequest.pm
 lib/AsposeCellsCloud/Request/RemoveDuplicatesRequest.pm
 lib/AsposeCellsCloud/Request/SwapRangeRequest.pm
 lib/AsposeCellsCloud/Request/FlipDataRequest.pm
+lib/AsposeCellsCloud/Request/TransposeDataRequest.pm
+lib/AsposeCellsCloud/Request/UnpivotRangeRequest.pm
+lib/AsposeCellsCloud/Request/UnpivotTableRequest.pm
 lib/AsposeCellsCloud/Request/DownloadFileRequest.pm
 lib/AsposeCellsCloud/Request/UploadFileRequest.pm
 lib/AsposeCellsCloud/Request/CopyFileRequest.pm

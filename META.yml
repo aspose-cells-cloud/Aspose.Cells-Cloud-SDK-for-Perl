@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 26.3.1
+    version: 26.4
   AsposeCellsCloud::Configuration:
     file: lib/AsposeCellsCloud/Configuration.pm
   AsposeCellsCloud::Role:
@@ -1113,6 +1113,12 @@ provides:
     file: lib/AsposeCellsCloud/Request/SwapRangeRequest.pm
   AsposeCellsCloud::Request::FlipDataRequest:
     file: lib/AsposeCellsCloud/Request/FlipDataRequest.pm
+  AsposeCellsCloud::Request::TransposeDataRequest:
+    file: lib/AsposeCellsCloud/Request/TransposeDataRequest.pm
+  AsposeCellsCloud::Request::UnpivotRangeRequest:
+    file: lib/AsposeCellsCloud/Request/UnpivotRangeRequest.pm
+  AsposeCellsCloud::Request::UnpivotTableRequest:
+    file: lib/AsposeCellsCloud/Request/UnpivotTableRequest.pm
   AsposeCellsCloud::Request::DownloadFileRequest:
     file: lib/AsposeCellsCloud/Request/DownloadFileRequest.pm
   AsposeCellsCloud::Request::UploadFileRequest:
@@ -1846,5 +1852,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 26.3.1
+version: 26.4
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

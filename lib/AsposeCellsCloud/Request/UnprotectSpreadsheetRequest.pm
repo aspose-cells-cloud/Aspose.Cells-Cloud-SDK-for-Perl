@@ -65,7 +65,7 @@ sub new {
 # UnprotectSpreadsheetRequest.modifyPassword : Sets the protected password to modify the file.  ,
 # UnprotectSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # UnprotectSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# UnprotectSpreadsheetRequest.region : The spreadsheet region setting.   
+# UnprotectSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.   
 
 {
     my $params = {
@@ -177,7 +177,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},    

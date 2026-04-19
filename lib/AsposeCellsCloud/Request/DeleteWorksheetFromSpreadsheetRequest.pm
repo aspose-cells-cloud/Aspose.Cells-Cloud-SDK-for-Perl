@@ -64,7 +64,7 @@ sub new {
 # DeleteWorksheetFromSpreadsheetRequest.sheetName : Specifies the name or identifier of the worksheet to be deleted. This parameter is required and must match the name of an existing worksheet in the workbook.  ,
 # DeleteWorksheetFromSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # DeleteWorksheetFromSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# DeleteWorksheetFromSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# DeleteWorksheetFromSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # DeleteWorksheetFromSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -170,7 +170,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

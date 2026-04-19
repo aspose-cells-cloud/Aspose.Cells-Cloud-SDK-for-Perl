@@ -65,7 +65,7 @@ sub new {
 # ReplaceSpreadsheetContentRequest.replaceText : Specify the replace content.  ,
 # ReplaceSpreadsheetContentRequest.worksheet : Specify the worksheet for the replace.  ,
 # ReplaceSpreadsheetContentRequest.cellArea : Specify the cell area for the replace.  ,
-# ReplaceSpreadsheetContentRequest.region : The spreadsheet region setting.  ,
+# ReplaceSpreadsheetContentRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ReplaceSpreadsheetContentRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -182,7 +182,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

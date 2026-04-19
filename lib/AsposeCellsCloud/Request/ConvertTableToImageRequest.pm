@@ -67,7 +67,7 @@ sub new {
 # ConvertTableToImageRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ConvertTableToImageRequest.outStorageName : Output file Storage Name.  ,
 # ConvertTableToImageRequest.fontsLocation : Use Custom fonts.  ,
-# ConvertTableToImageRequest.region : The spreadsheet region setting.  ,
+# ConvertTableToImageRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ConvertTableToImageRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -206,7 +206,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},

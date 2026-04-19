@@ -67,7 +67,7 @@ sub new {
 # ConvertChartToImageRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ConvertChartToImageRequest.outStorageName : Output file Storage Name.  ,
 # ConvertChartToImageRequest.fontsLocation : Use Custom fonts.  ,
-# ConvertChartToImageRequest.region : The spreadsheet region setting.  ,
+# ConvertChartToImageRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ConvertChartToImageRequest.password : The password for opening spreadsheet file.   
 
 {
@@ -206,7 +206,7 @@ __PACKAGE__->method_documentation({
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
-     	description => 'The spreadsheet region setting.',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
      	format => '',
      	read_only => '',
      		},
