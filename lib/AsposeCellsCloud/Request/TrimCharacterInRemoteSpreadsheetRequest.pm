@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::TrimCharacterRequest;
+package AsposeCellsCloud::Request::TrimCharacterInRemoteSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,20 +60,20 @@ sub new {
 
 
 # Run Operation Request
-# TrimCharacterRequest.Spreadsheet : Upload spreadsheet file.  ,
-# TrimCharacterRequest.trimContent : Specify the trim content.  ,
-# TrimCharacterRequest.trimLeading : Specify to trim content from the beginning.  ,
-# TrimCharacterRequest.trimTrailing : Specify to trim content from the end.  ,
-# TrimCharacterRequest.trimSpaceBetweenWordTo1 : Remove excess spaces between words within a cell.  ,
-# TrimCharacterRequest.trimNonBreakingSpaces : Remove non-breaking spaces.  ,
-# TrimCharacterRequest.removeExtraLineBreaks : Remove extra line breaks.  ,
-# TrimCharacterRequest.removeAllLineBreaks : Remove all line breaks.  ,
-# TrimCharacterRequest.worksheet : Specify the worksheet of spreadsheet.  ,
-# TrimCharacterRequest.range : Specify the worksheet range of spreadsheet.  ,
-# TrimCharacterRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# TrimCharacterRequest.outStorageName : Output file Storage Name.  ,
-# TrimCharacterRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# TrimCharacterRequest.password : The password for opening spreadsheet file.   
+# TrimCharacterInRemoteSpreadsheetRequest.name : Specify the spreadsheet name on remote server.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.range : Specify the worksheet range of spreadsheet.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.trimContent : Specify the trim content.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.trimLeading : Specify to trim content from the beginning.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.trimTrailing : Specify to trim content from the end.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.trimSpaceBetweenWordTo1 : Remove excess spaces between words within a cell.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.trimNonBreakingSpaces : Remove non-breaking spaces.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.removeExtraLineBreaks : Remove extra line breaks.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.removeAllLineBreaks : Remove all line breaks.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.folder : Specify the spreadsheet storage position on remote server  ,
+# TrimCharacterInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# TrimCharacterInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -83,10 +83,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'trim_character' } = { 
-    	summary => 'The TrimSpreadsheetContent API is designed to process and trim content within a remote spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
+    __PACKAGE__->method_documentation->{ 'trim_character_in_remote_spreadsheet' } = { 
+    	summary => 'The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
         params => $params,
-        returns => 'string',
+        returns => 'CellsCloudResponse',
     };
 }
 
@@ -96,7 +96,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/trim';
+    my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/range/{range}/content/trim';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -108,8 +108,24 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
- 
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->worksheet){
+        my $_base_variable = "{" . "worksheet" . "}";
+        my $_base_value = $client->to_path_value($self->worksheet);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->range){
+        my $_base_variable = "{" . "range" . "}";
+        my $_base_value = $client->to_path_value($self->range);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
     if(defined $self->trim_content){
         $query_params->{'trimContent'} = $client->to_query_value($self->trim_content);      
     }
@@ -138,20 +154,12 @@ sub run_http_request {
         $query_params->{'removeAllLineBreaks'} = $client->to_query_value($self->remove_all_line_breaks);      
     }
 
-    if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
 
-    if(defined $self->range){
-        $query_params->{'range'} = $client->to_query_value($self->range);      
-    }
-
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
-    }
-
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
     }
 
     if(defined $self->region){
@@ -163,10 +171,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -179,10 +183,24 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
+     	base_name => 'name',
+     	description => 'Specify the spreadsheet name on remote server.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'Specify the worksheet of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => 'Specify the worksheet range of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
@@ -235,31 +253,17 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'worksheet' => {
+     'folder' => {
      	datatype => 'string',
-     	base_name => 'worksheet',
-     	description => 'Specify the worksheet of spreadsheet.',
+     	base_name => 'folder',
+     	description => 'Specify the spreadsheet storage position on remote server',
      	format => '',
      	read_only => '',
      		},
-     'range' => {
+     'storage_name' => {
      	datatype => 'string',
-     	base_name => 'range',
-     	description => 'Specify the worksheet range of spreadsheet.',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_path' => {
-     	datatype => 'string',
-     	base_name => 'outPath',
-     	description => '(Optional) The folder path where the workbook is stored. The default is null.',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_storage_name' => {
-     	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
      	format => '',
      	read_only => '',
      		},
@@ -281,7 +285,9 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
+    'name' => 'name',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
     'trim_content' => 'trimContent',
     'trim_leading' => 'trimLeading',
     'trim_trailing' => 'trimTrailing',
@@ -289,10 +295,8 @@ __PACKAGE__->attribute_map( {
     'trim_non_breaking_spaces' => 'trimNonBreakingSpaces',
     'remove_extra_line_breaks' => 'removeExtraLineBreaks',
     'remove_all_line_breaks' => 'removeAllLineBreaks',
-    'worksheet' => 'worksheet',
-    'range' => 'range',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
     'region' => 'region',
     'password' => 'password' 
 } );

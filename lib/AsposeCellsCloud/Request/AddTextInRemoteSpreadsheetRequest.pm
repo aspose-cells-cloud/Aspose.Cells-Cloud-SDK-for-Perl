@@ -1,0 +1,268 @@
+=begin comment
+
+Copyright (c) 2026 Aspose.Cells Cloud
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+=end comment
+
+=cut
+
+package AsposeCellsCloud::Request::AddTextInRemoteSpreadsheetRequest;
+
+require 5.6.0;
+use strict;
+use warnings;
+use utf8;
+use JSON ;
+use Data::Dumper;
+use Module::Runtime qw(use_module);
+use Log::Any qw($log);
+use Date::Parse;
+use DateTime;
+use File::Basename;
+
+use base ("Class::Accessor", "Class::Data::Inheritable");
+
+__PACKAGE__->mk_classdata('attribute_map' => {});
+__PACKAGE__->mk_classdata('method_documentation' => {}); 
+__PACKAGE__->mk_classdata('class_documentation' => {});
+
+
+# new object
+sub new { 
+    my ($class, %args) = @_; 
+
+	my $self = bless {}, $class;
+
+	foreach my $attribute (keys %{$class->attribute_map}) {
+		my $args_key = $class->attribute_map->{$attribute};
+		$self->$attribute( $args{ $args_key } );
+	}
+
+	return $self;
+}  
+
+
+# Run Operation Request
+# AddTextInRemoteSpreadsheetRequest.name : (Required) The name of the workbook file to be retrieved.  ,
+# AddTextInRemoteSpreadsheetRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# AddTextInRemoteSpreadsheetRequest.range : Specify the worksheet range of spreadsheet.  ,
+# AddTextInRemoteSpreadsheetRequest.text : Specify the added text content.  ,
+# AddTextInRemoteSpreadsheetRequest.position : Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.  ,
+# AddTextInRemoteSpreadsheetRequest.selectText : Indicates selecting the specific position to add text based on the content of the text.  ,
+# AddTextInRemoteSpreadsheetRequest.skipEmptyCells : Indicates skip empty cells.  ,
+# AddTextInRemoteSpreadsheetRequest.folder : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# AddTextInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# AddTextInRemoteSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# AddTextInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
+
+{
+    my $params = {
+       'client' =>{
+            data_type => 'ApiClient',
+            description => 'API Client.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'add_text_in_remote_spreadsheet' } = { 
+    	summary => 'Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+
+sub run_http_request {
+    my ($self, %args) = @_;
+
+    my $client = $args{'client'};
+
+    # parse inputs
+    my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/range/{range}/content/add/text';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+
+    my $_header_accept = $client->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->worksheet){
+        my $_base_variable = "{" . "worksheet" . "}";
+        my $_base_value = $client->to_path_value($self->worksheet);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->range){
+        my $_base_variable = "{" . "range" . "}";
+        my $_base_value = $client->to_path_value($self->range);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
+    if(defined $self->text){
+        $query_params->{'text'} = $client->to_query_value($self->text);      
+    }
+
+    if(defined $self->position){
+        $query_params->{'position'} = $client->to_query_value($self->position);      
+    }
+
+    if(defined $self->select_text){
+        $query_params->{'selectText'} = $client->to_query_value($self->select_text);      
+    }
+
+    if(defined $self->skip_empty_cells){
+        $query_params->{'skipEmptyCells'} = $client->to_query_value($self->skip_empty_cells);      
+    }
+
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
+    }
+
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
+    }
+
+    if(defined $self->region){
+        $query_params->{'region'} = $client->to_query_value($self->region);      
+    }
+
+    if(defined $self->password){
+        $query_params->{'password'} = $client->to_query_value($self->password);      
+    } 
+    my $_body_data;
+
+ 
+
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $client->call_api($_resource_path, $_method, $query_params, $form_params, $header_params, $_body_data, $auth_settings);
+    return $response;
+}
+
+
+__PACKAGE__->method_documentation({
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'name',
+     	description => '(Required) The name of the workbook file to be retrieved.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'Specify the worksheet of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => 'Specify the worksheet range of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'text' => {
+     	datatype => 'string',
+     	base_name => 'text',
+     	description => 'Specify the added text content.',
+     	format => '',
+     	read_only => '',
+     		},
+     'position' => {
+     	datatype => 'string',
+     	base_name => 'position',
+     	description => 'Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.',
+     	format => '',
+     	read_only => '',
+     		},
+     'select_text' => {
+     	datatype => 'string',
+     	base_name => 'selectText',
+     	description => 'Indicates selecting the specific position to add text based on the content of the text.',
+     	format => '',
+     	read_only => '',
+     		},
+     'skip_empty_cells' => {
+     	datatype => 'string',
+     	base_name => 'skipEmptyCells',
+     	description => 'Indicates skip empty cells.',
+     	format => '',
+     	read_only => '',
+     		},
+     'folder' => {
+     	datatype => 'string',
+     	base_name => 'folder',
+     	description => '(Optional) The folder path where the workbook is stored. The default is null.',
+     	format => '',
+     	read_only => '',
+     		},
+     'storage_name' => {
+     	datatype => 'string',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
+     	format => '',
+     	read_only => '',
+     		},
+     'region' => {
+     	datatype => 'string',
+     	base_name => 'region',
+     	description => 'Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.',
+     	format => '',
+     	read_only => '',
+     		},
+     'password' => {
+     	datatype => 'string',
+     	base_name => 'password',
+     	description => 'The password for opening spreadsheet file.',
+     	format => '',
+     	read_only => '',
+     		},    
+});
+
+
+__PACKAGE__->attribute_map( {
+    'name' => 'name',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
+    'text' => 'text',
+    'position' => 'position',
+    'select_text' => 'selectText',
+    'skip_empty_cells' => 'skipEmptyCells',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
+    'region' => 'region',
+    'password' => 'password' 
+} );
+
+__PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
+
+
+1;

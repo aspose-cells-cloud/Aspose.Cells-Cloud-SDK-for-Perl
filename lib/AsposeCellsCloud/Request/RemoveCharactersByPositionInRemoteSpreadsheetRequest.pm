@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RemoveCharactersByPositionRequest;
+package AsposeCellsCloud::Request::RemoveCharactersByPositionInRemoteSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,18 +60,18 @@ sub new {
 
 
 # Run Operation Request
-# RemoveCharactersByPositionRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RemoveCharactersByPositionRequest.theFirstNCharacters : Specify removing the first n characters from selected cells.  ,
-# RemoveCharactersByPositionRequest.theLastNCharacters : Specify removing the last n characters from selected cells.  ,
-# RemoveCharactersByPositionRequest.allCharactersBeforeText : Specify using targeted removal options to delete text that is located before certain characters.  ,
-# RemoveCharactersByPositionRequest.allCharactersAfterText : Specify using targeted removal options to delete text that is located after certain characters.  ,
-# RemoveCharactersByPositionRequest.caseSensitive : Affects `Substring` mode and `CustomChars` when enabled.  ,
-# RemoveCharactersByPositionRequest.worksheet : Specify the worksheet of spreadsheet.  ,
-# RemoveCharactersByPositionRequest.range : Specify the worksheet range of spreadsheet.  ,
-# RemoveCharactersByPositionRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RemoveCharactersByPositionRequest.outStorageName : Output file Storage Name.  ,
-# RemoveCharactersByPositionRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# RemoveCharactersByPositionRequest.password : The password for opening spreadsheet file.   
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.name : (Required) The name of the workbook file to be retrieved.  ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.range : Specify the worksheet range of spreadsheet.  ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.theFirstNCharacters :   ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.theLastNCharacters :   ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.allCharactersBeforeText :   ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.allCharactersAfterText :   ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.caseSensitive :   ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.folder : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -81,10 +81,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'remove_characters_by_position' } = { 
+    __PACKAGE__->method_documentation->{ 'remove_characters_by_position_in_remote_spreadsheet' } = { 
     	summary => 'Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.',
         params => $params,
-        returns => 'string',
+        returns => 'CellsCloudResponse',
     };
 }
 
@@ -94,7 +94,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/remove/characters-by-position';
+    my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/range/{range}/content/remove/characters-by-position';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -106,8 +106,24 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
- 
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->worksheet){
+        my $_base_variable = "{" . "worksheet" . "}";
+        my $_base_value = $client->to_path_value($self->worksheet);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->range){
+        my $_base_variable = "{" . "range" . "}";
+        my $_base_value = $client->to_path_value($self->range);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
     if(defined $self->the_first_n_characters){
         $query_params->{'theFirstNCharacters'} = $client->to_query_value($self->the_first_n_characters);      
     }
@@ -128,20 +144,12 @@ sub run_http_request {
         $query_params->{'caseSensitive'} = $client->to_query_value($self->case_sensitive);      
     }
 
-    if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
 
-    if(defined $self->range){
-        $query_params->{'range'} = $client->to_query_value($self->range);      
-    }
-
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
-    }
-
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
     }
 
     if(defined $self->region){
@@ -153,10 +161,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -169,45 +173,10 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
-     	format => '',
-     	read_only => '',
-     		},
-     'the_first_n_characters' => {
-     	datatype => 'int',
-     	base_name => 'theFirstNCharacters',
-     	description => 'Specify removing the first n characters from selected cells.',
-     	format => '',
-     	read_only => '',
-     		},
-     'the_last_n_characters' => {
-     	datatype => 'int',
-     	base_name => 'theLastNCharacters',
-     	description => 'Specify removing the last n characters from selected cells.',
-     	format => '',
-     	read_only => '',
-     		},
-     'all_characters_before_text' => {
-     	datatype => 'string',
-     	base_name => 'allCharactersBeforeText',
-     	description => 'Specify using targeted removal options to delete text that is located before certain characters.',
-     	format => '',
-     	read_only => '',
-     		},
-     'all_characters_after_text' => {
-     	datatype => 'string',
-     	base_name => 'allCharactersAfterText',
-     	description => 'Specify using targeted removal options to delete text that is located after certain characters.',
-     	format => '',
-     	read_only => '',
-     		},
-     'case_sensitive' => {
-     	datatype => 'string',
-     	base_name => 'caseSensitive',
-     	description => 'Affects `Substring` mode and `CustomChars` when enabled.',
+     	base_name => 'name',
+     	description => '(Required) The name of the workbook file to be retrieved.',
      	format => '',
      	read_only => '',
      		},
@@ -225,17 +194,52 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'out_path' => {
+     'the_first_n_characters' => {
+     	datatype => 'int',
+     	base_name => 'theFirstNCharacters',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'the_last_n_characters' => {
+     	datatype => 'int',
+     	base_name => 'theLastNCharacters',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'all_characters_before_text' => {
      	datatype => 'string',
-     	base_name => 'outPath',
+     	base_name => 'allCharactersBeforeText',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'all_characters_after_text' => {
+     	datatype => 'string',
+     	base_name => 'allCharactersAfterText',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'case_sensitive' => {
+     	datatype => 'string',
+     	base_name => 'caseSensitive',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'folder' => {
+     	datatype => 'string',
+     	base_name => 'folder',
      	description => '(Optional) The folder path where the workbook is stored. The default is null.',
      	format => '',
      	read_only => '',
      		},
-     'out_storage_name' => {
+     'storage_name' => {
      	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
      	format => '',
      	read_only => '',
      		},
@@ -257,16 +261,16 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
+    'name' => 'name',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
     'the_first_n_characters' => 'theFirstNCharacters',
     'the_last_n_characters' => 'theLastNCharacters',
     'all_characters_before_text' => 'allCharactersBeforeText',
     'all_characters_after_text' => 'allCharactersAfterText',
     'case_sensitive' => 'caseSensitive',
-    'worksheet' => 'worksheet',
-    'range' => 'range',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
     'region' => 'region',
     'password' => 'password' 
 } );

@@ -2499,6 +2499,82 @@ sub accept_all_revisions_in_remote_spreadsheet{
 }
 
 #
+# GetSpreadsheetStructureRequest
+#
+# Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'GetSpreadsheetStructureRequest',
+            description => 'GetSpreadsheetStructure Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'get_spreadsheet_structure' } = { 
+    	summary => 'Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub get_spreadsheet_structure{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# GetStructureInRemoteSpreadsheetRequest
+#
+# Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.
+# 
+# @name  string (required)    
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'GetStructureInRemoteSpreadsheetRequest',
+            description => 'GetStructureInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'get_structure_in_remote_spreadsheet' } = { 
+    	summary => 'Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub get_structure_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # ProtectSpreadsheetRequest
 #
 # Applies dual-layer password protection to Excel spreadsheets, supporting both open and modify passwords with encryption.
@@ -3262,9 +3338,57 @@ sub codegen_spec{
 }
 
 #
-# TrimCharacterRequest
+# TrimCharacterInRemoteSpreadsheetRequest
 #
 # The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting
+# 
+# @name  string (required)  Specify the spreadsheet name on remote server.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @trimContent  string   Specify the trim content.  
+# @trimLeading  boolean   Specify to trim content from the beginning.  
+# @trimTrailing  boolean   Specify to trim content from the end.  
+# @trimSpaceBetweenWordTo1  boolean   Remove excess spaces between words within a cell.  
+# @trimNonBreakingSpaces  boolean   Remove non-breaking spaces.  
+# @removeExtraLineBreaks  boolean   Remove extra line breaks.  
+# @removeAllLineBreaks  boolean   Remove all line breaks.  
+# @folder  string   Specify the spreadsheet storage position on remote server  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'TrimCharacterInRemoteSpreadsheetRequest',
+            description => 'TrimCharacterInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'trim_character_in_remote_spreadsheet' } = { 
+    	summary => 'The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub trim_character_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
+# TrimCharacterRequest
+#
+# The TrimSpreadsheetContent API is designed to process and trim content within a remote spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @trimContent  string   Specify the trim content.  
@@ -3290,7 +3414,7 @@ sub codegen_spec{
        }
     };
     __PACKAGE__->method_documentation->{ 'trim_character' } = { 
-    	summary => 'The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
+    	summary => 'The TrimSpreadsheetContent API is designed to process and trim content within a remote spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
         params => $params,
         returns => 'string',
     };
@@ -3352,6 +3476,48 @@ sub update_word_case{
 }
 
 #
+# UpdateWordCaseInRemoteSpreadsheetRequest
+#
+# Specify changing the text case in a remote spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @wordCaseType  string (required)  Specify text case: Upper Case, Lower Case, Proper Case, Sentence Case.  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'UpdateWordCaseInRemoteSpreadsheetRequest',
+            description => 'UpdateWordCaseInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'update_word_case_in_remote_spreadsheet' } = { 
+    	summary => 'Specify changing the text case in a remote spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub update_word_case_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # RemoveCharactersRequest
 #
 # Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation.
@@ -3360,7 +3526,7 @@ sub update_word_case{
 # @removeTextMethod  string   Specify the removal of text method type.  
 # @characterSets  string   Specify the character sets.  
 # @removeCustomValue  string   Specify the remove custom value.  
-# @caseSensitive  boolean     
+# @caseSensitive  boolean   affects `Substring` mode and `CustomChars` when enabled    
 # @worksheet  string   Specify the worksheet of spreadsheet.  
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
@@ -3397,6 +3563,51 @@ sub remove_characters{
 }
 
 #
+# RemoveCharactersInRemoteSpreadsheetRequest
+#
+# Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation for a remote spreadsheet.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @removeTextMethod  string   Specify the removal of text method type.  
+# @characterSets  string   Specify the character sets.  
+# @removeCustomValue  string   Specify the remove custom value.  
+# @caseSensitive  boolean   Affects `Substring` mode and `CustomChars` when enabled.  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'RemoveCharactersInRemoteSpreadsheetRequest',
+            description => 'RemoveCharactersInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'remove_characters_in_remote_spreadsheet' } = { 
+    	summary => 'Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation for a remote spreadsheet.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub remove_characters_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # RemoveCharactersByPositionRequest
 #
 # Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.
@@ -3406,7 +3617,7 @@ sub remove_characters{
 # @theLastNCharacters  int   Specify removing the last n characters from selected cells.  
 # @allCharactersBeforeText  string   Specify using targeted removal options to delete text that is located before certain characters.  
 # @allCharactersAfterText  string   Specify using targeted removal options to delete text that is located after certain characters.  
-# @caseSensitive  boolean     
+# @caseSensitive  boolean   Affects `Substring` mode and `CustomChars` when enabled.  
 # @worksheet  string   Specify the worksheet of spreadsheet.  
 # @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
@@ -3443,6 +3654,52 @@ sub remove_characters_by_position{
 }
 
 #
+# RemoveCharactersByPositionInRemoteSpreadsheetRequest
+#
+# Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @theFirstNCharacters  int     
+# @theLastNCharacters  int     
+# @allCharactersBeforeText  string     
+# @allCharactersAfterText  string     
+# @caseSensitive  boolean     
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'RemoveCharactersByPositionInRemoteSpreadsheetRequest',
+            description => 'RemoveCharactersByPositionInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'remove_characters_by_position_in_remote_spreadsheet' } = { 
+    	summary => 'Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub remove_characters_by_position_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # RemoveDuplicateSubstringsRequest
 #
 # Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.
@@ -3451,8 +3708,8 @@ sub remove_characters_by_position{
 # @delimiters  string (required)  comma, semicolon, space, tab, line-break   
 # @treatConsecutiveDelimitersAsOne  boolean   collapse adjacent delimiters into a single separator.  
 # @caseSensitive  boolean     
-# @worksheet  string     
-# @range  string     
+# @worksheet  string   Specify the worksheet of spreadsheet.  
+# @range  string   Specify the worksheet range of spreadsheet.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -3483,6 +3740,50 @@ sub remove_duplicate_substrings{
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# RemoveDuplicateSubstringsInRemoteSpreadsheetRequest
+#
+# Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @delimiters  string (required)  comma, semicolon, space, tab, line-break   
+# @treatConsecutiveDelimitersAsOne  boolean   collapse adjacent delimiters into a single separator.  
+# @caseSensitive  boolean     
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'RemoveDuplicateSubstringsInRemoteSpreadsheetRequest',
+            description => 'RemoveDuplicateSubstringsInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'remove_duplicate_substrings_in_remote_spreadsheet' } = { 
+    	summary => 'Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub remove_duplicate_substrings_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
     return $_response_object;
 }
 
@@ -3532,6 +3833,51 @@ sub add_text{
 }
 
 #
+# AddTextInRemoteSpreadsheetRequest
+#
+# Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @text  string (required)  Specify the added text content.  
+# @position  string (required)  Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.  
+# @selectText  string   Indicates selecting the specific position to add text based on the content of the text.  
+# @skipEmptyCells  boolean   Indicates skip empty cells.  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'AddTextInRemoteSpreadsheetRequest',
+            description => 'AddTextInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'add_text_in_remote_spreadsheet' } = { 
+    	summary => 'Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub add_text_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # ConvertTextRequest
 #
 # Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.
@@ -3572,6 +3918,50 @@ sub convert_text{
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertTextInRemoteSpreadsheetRequest
+#
+# Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  Specify the worksheet of spreadsheet.  
+# @range  string (required)  Specify the worksheet range of spreadsheet.  
+# @convertTextType  string (required)  Indicates the conversion of text type.  
+# @sourceCharacters  string   Indicates the source characters.  
+# @targetCharacters  string   Indicates the target characters.  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertTextInRemoteSpreadsheetRequest',
+            description => 'ConvertTextInRemoteSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_text_in_remote_spreadsheet' } = { 
+    	summary => 'Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub convert_text_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
     return $_response_object;
 }
 

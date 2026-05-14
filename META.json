@@ -63,7 +63,7 @@
       },
       "AsposeCellsCloud::CellsApi" : {
          "file" : "lib/AsposeCellsCloud/CellsApi.pm",
-         "version" : "26.4"
+         "version" : "26.5"
       },    
       "AsposeCellsCloud::Configuration" : {
          "file" : "lib/AsposeCellsCloud/Configuration.pm"
@@ -145,6 +145,9 @@
       },
       "AsposeCellsCloud::Object::DocxSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/DocxSaveOptions.pm"
+      },
+      "AsposeCellsCloud::Object::EbookSaveOptions" : {
+         "file" : "lib/AsposeCellsCloud/Object/EbookSaveOptions.pm"
       },
       "AsposeCellsCloud::Object::HtmlSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/HtmlSaveOptions.pm"
@@ -1595,6 +1598,12 @@
       "AsposeCellsCloud::Request::AcceptAllRevisionsInRemoteSpreadsheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/AcceptAllRevisionsInRemoteSpreadsheetRequest.pm"
       },
+      "AsposeCellsCloud::Request::GetSpreadsheetStructureRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/GetSpreadsheetStructureRequest.pm"
+      },
+      "AsposeCellsCloud::Request::GetStructureInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/GetStructureInRemoteSpreadsheetRequest.pm"
+      },
       "AsposeCellsCloud::Request::ProtectSpreadsheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/ProtectSpreadsheetRequest.pm"
       },
@@ -1652,26 +1661,47 @@
       "AsposeCellsCloud::Request::CodegenSpecRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/CodegenSpecRequest.pm"
       },
+      "AsposeCellsCloud::Request::TrimCharacterInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/TrimCharacterInRemoteSpreadsheetRequest.pm"
+      },
       "AsposeCellsCloud::Request::TrimCharacterRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/TrimCharacterRequest.pm"
       },
       "AsposeCellsCloud::Request::UpdateWordCaseRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/UpdateWordCaseRequest.pm"
       },
+      "AsposeCellsCloud::Request::UpdateWordCaseInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/UpdateWordCaseInRemoteSpreadsheetRequest.pm"
+      },
       "AsposeCellsCloud::Request::RemoveCharactersRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/RemoveCharactersRequest.pm"
+      },
+      "AsposeCellsCloud::Request::RemoveCharactersInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/RemoveCharactersInRemoteSpreadsheetRequest.pm"
       },
       "AsposeCellsCloud::Request::RemoveCharactersByPositionRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/RemoveCharactersByPositionRequest.pm"
       },
+      "AsposeCellsCloud::Request::RemoveCharactersByPositionInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/RemoveCharactersByPositionInRemoteSpreadsheetRequest.pm"
+      },
       "AsposeCellsCloud::Request::RemoveDuplicateSubstringsRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/RemoveDuplicateSubstringsRequest.pm"
+      },
+      "AsposeCellsCloud::Request::RemoveDuplicateSubstringsInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/RemoveDuplicateSubstringsInRemoteSpreadsheetRequest.pm"
       },
       "AsposeCellsCloud::Request::AddTextRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/AddTextRequest.pm"
       },
+      "AsposeCellsCloud::Request::AddTextInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/AddTextInRemoteSpreadsheetRequest.pm"
+      },
       "AsposeCellsCloud::Request::ConvertTextRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/ConvertTextRequest.pm"
+      },
+      "AsposeCellsCloud::Request::ConvertTextInRemoteSpreadsheetRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/ConvertTextInRemoteSpreadsheetRequest.pm"
       },
       "AsposeCellsCloud::Request::ExtractTextRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/ExtractTextRequest.pm"
@@ -2776,6 +2806,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "26.4",
+   "version" : "26.5",
    "x_serialization_backend" : "JSON::PP version 2.27400"
 }

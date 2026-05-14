@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RemoveCharactersRequest;
+package AsposeCellsCloud::Request::UpdateWordCaseInRemoteSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,17 +60,14 @@ sub new {
 
 
 # Run Operation Request
-# RemoveCharactersRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RemoveCharactersRequest.removeTextMethod : Specify the removal of text method type.  ,
-# RemoveCharactersRequest.characterSets : Specify the character sets.  ,
-# RemoveCharactersRequest.removeCustomValue : Specify the remove custom value.  ,
-# RemoveCharactersRequest.caseSensitive : affects `Substring` mode and `CustomChars` when enabled    ,
-# RemoveCharactersRequest.worksheet : Specify the worksheet of spreadsheet.  ,
-# RemoveCharactersRequest.range : Specify the worksheet range of spreadsheet.  ,
-# RemoveCharactersRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RemoveCharactersRequest.outStorageName : Output file Storage Name.  ,
-# RemoveCharactersRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# RemoveCharactersRequest.password : The password for opening spreadsheet file.   
+# UpdateWordCaseInRemoteSpreadsheetRequest.name : (Required) The name of the workbook file to be retrieved.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.range : Specify the worksheet range of spreadsheet.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.wordCaseType : Specify text case: Upper Case, Lower Case, Proper Case, Sentence Case.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.folder : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# UpdateWordCaseInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -80,10 +77,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'remove_characters' } = { 
-    	summary => 'Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation.',
+    __PACKAGE__->method_documentation->{ 'update_word_case_in_remote_spreadsheet' } = { 
+    	summary => 'Specify changing the text case in a remote spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.',
         params => $params,
-        returns => 'string',
+        returns => 'CellsCloudResponse',
     };
 }
 
@@ -93,7 +90,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/remove/characters';
+    my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/range/{range}/content/wordcase';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -105,38 +102,34 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
- 
-    if(defined $self->remove_text_method){
-        $query_params->{'removeTextMethod'} = $client->to_query_value($self->remove_text_method);      
-    }
-
-    if(defined $self->character_sets){
-        $query_params->{'characterSets'} = $client->to_query_value($self->character_sets);      
-    }
-
-    if(defined $self->remove_custom_value){
-        $query_params->{'removeCustomValue'} = $client->to_query_value($self->remove_custom_value);      
-    }
-
-    if(defined $self->case_sensitive){
-        $query_params->{'caseSensitive'} = $client->to_query_value($self->case_sensitive);      
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
     }
 
     if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+        my $_base_variable = "{" . "worksheet" . "}";
+        my $_base_value = $client->to_path_value($self->worksheet);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
     }
 
     if(defined $self->range){
-        $query_params->{'range'} = $client->to_query_value($self->range);      
+        my $_base_variable = "{" . "range" . "}";
+        my $_base_value = $client->to_path_value($self->range);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
+    if(defined $self->word_case_type){
+        $query_params->{'wordCaseType'} = $client->to_query_value($self->word_case_type);      
     }
 
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
 
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
     }
 
     if(defined $self->region){
@@ -148,10 +141,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -164,38 +153,10 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
-     	format => '',
-     	read_only => '',
-     		},
-     'remove_text_method' => {
-     	datatype => 'string',
-     	base_name => 'removeTextMethod',
-     	description => 'Specify the removal of text method type.',
-     	format => '',
-     	read_only => '',
-     		},
-     'character_sets' => {
-     	datatype => 'string',
-     	base_name => 'characterSets',
-     	description => 'Specify the character sets.',
-     	format => '',
-     	read_only => '',
-     		},
-     'remove_custom_value' => {
-     	datatype => 'string',
-     	base_name => 'removeCustomValue',
-     	description => 'Specify the remove custom value.',
-     	format => '',
-     	read_only => '',
-     		},
-     'case_sensitive' => {
-     	datatype => 'string',
-     	base_name => 'caseSensitive',
-     	description => 'affects `Substring` mode and `CustomChars` when enabled  ',
+     	base_name => 'name',
+     	description => '(Required) The name of the workbook file to be retrieved.',
      	format => '',
      	read_only => '',
      		},
@@ -213,17 +174,24 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'out_path' => {
+     'word_case_type' => {
      	datatype => 'string',
-     	base_name => 'outPath',
+     	base_name => 'wordCaseType',
+     	description => 'Specify text case: Upper Case, Lower Case, Proper Case, Sentence Case.',
+     	format => '',
+     	read_only => '',
+     		},
+     'folder' => {
+     	datatype => 'string',
+     	base_name => 'folder',
      	description => '(Optional) The folder path where the workbook is stored. The default is null.',
      	format => '',
      	read_only => '',
      		},
-     'out_storage_name' => {
+     'storage_name' => {
      	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
      	format => '',
      	read_only => '',
      		},
@@ -245,15 +213,12 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
-    'remove_text_method' => 'removeTextMethod',
-    'character_sets' => 'characterSets',
-    'remove_custom_value' => 'removeCustomValue',
-    'case_sensitive' => 'caseSensitive',
+    'name' => 'name',
     'worksheet' => 'worksheet',
     'range' => 'range',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
+    'word_case_type' => 'wordCaseType',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
     'region' => 'region',
     'password' => 'password' 
 } );

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RemoveCharactersRequest;
+package AsposeCellsCloud::Request::RemoveCharactersInRemoteSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,17 +60,17 @@ sub new {
 
 
 # Run Operation Request
-# RemoveCharactersRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RemoveCharactersRequest.removeTextMethod : Specify the removal of text method type.  ,
-# RemoveCharactersRequest.characterSets : Specify the character sets.  ,
-# RemoveCharactersRequest.removeCustomValue : Specify the remove custom value.  ,
-# RemoveCharactersRequest.caseSensitive : affects `Substring` mode and `CustomChars` when enabled    ,
-# RemoveCharactersRequest.worksheet : Specify the worksheet of spreadsheet.  ,
-# RemoveCharactersRequest.range : Specify the worksheet range of spreadsheet.  ,
-# RemoveCharactersRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RemoveCharactersRequest.outStorageName : Output file Storage Name.  ,
-# RemoveCharactersRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# RemoveCharactersRequest.password : The password for opening spreadsheet file.   
+# RemoveCharactersInRemoteSpreadsheetRequest.name : (Required) The name of the workbook file to be retrieved.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.range : Specify the worksheet range of spreadsheet.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.removeTextMethod : Specify the removal of text method type.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.characterSets : Specify the character sets.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.removeCustomValue : Specify the remove custom value.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.caseSensitive : Affects `Substring` mode and `CustomChars` when enabled.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.folder : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# RemoveCharactersInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -80,10 +80,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'remove_characters' } = { 
-    	summary => 'Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation.',
+    __PACKAGE__->method_documentation->{ 'remove_characters_in_remote_spreadsheet' } = { 
+    	summary => 'Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation for a remote spreadsheet.',
         params => $params,
-        returns => 'string',
+        returns => 'CellsCloudResponse',
     };
 }
 
@@ -93,7 +93,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/remove/characters';
+    my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/range/{range}/content/remove/characters';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -105,8 +105,24 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
- 
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->worksheet){
+        my $_base_variable = "{" . "worksheet" . "}";
+        my $_base_value = $client->to_path_value($self->worksheet);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->range){
+        my $_base_variable = "{" . "range" . "}";
+        my $_base_value = $client->to_path_value($self->range);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
     if(defined $self->remove_text_method){
         $query_params->{'removeTextMethod'} = $client->to_query_value($self->remove_text_method);      
     }
@@ -123,20 +139,12 @@ sub run_http_request {
         $query_params->{'caseSensitive'} = $client->to_query_value($self->case_sensitive);      
     }
 
-    if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
 
-    if(defined $self->range){
-        $query_params->{'range'} = $client->to_query_value($self->range);      
-    }
-
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
-    }
-
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
     }
 
     if(defined $self->region){
@@ -148,10 +156,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -164,10 +168,24 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
+     	base_name => 'name',
+     	description => '(Required) The name of the workbook file to be retrieved.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'Specify the worksheet of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => 'Specify the worksheet range of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
@@ -195,35 +213,21 @@ __PACKAGE__->method_documentation({
      'case_sensitive' => {
      	datatype => 'string',
      	base_name => 'caseSensitive',
-     	description => 'affects `Substring` mode and `CustomChars` when enabled  ',
+     	description => 'Affects `Substring` mode and `CustomChars` when enabled.',
      	format => '',
      	read_only => '',
      		},
-     'worksheet' => {
+     'folder' => {
      	datatype => 'string',
-     	base_name => 'worksheet',
-     	description => 'Specify the worksheet of spreadsheet.',
-     	format => '',
-     	read_only => '',
-     		},
-     'range' => {
-     	datatype => 'string',
-     	base_name => 'range',
-     	description => 'Specify the worksheet range of spreadsheet.',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_path' => {
-     	datatype => 'string',
-     	base_name => 'outPath',
+     	base_name => 'folder',
      	description => '(Optional) The folder path where the workbook is stored. The default is null.',
      	format => '',
      	read_only => '',
      		},
-     'out_storage_name' => {
+     'storage_name' => {
      	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
      	format => '',
      	read_only => '',
      		},
@@ -245,15 +249,15 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
+    'name' => 'name',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
     'remove_text_method' => 'removeTextMethod',
     'character_sets' => 'characterSets',
     'remove_custom_value' => 'removeCustomValue',
     'case_sensitive' => 'caseSensitive',
-    'worksheet' => 'worksheet',
-    'range' => 'range',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
     'region' => 'region',
     'password' => 'password' 
 } );
