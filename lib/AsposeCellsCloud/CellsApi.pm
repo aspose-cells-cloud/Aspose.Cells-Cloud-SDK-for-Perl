@@ -172,6 +172,80 @@ sub translate_text_file{
 }
 
 #
+# ReportAIAnalysisRequest
+#
+# 
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ReportAIAnalysisRequest',
+            description => 'ReportAIAnalysis Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'report_ai_analysis' } = { 
+    	summary => '',
+        params => $params,
+        returns => '',
+    };
+}
+#
+# @return 
+#
+sub report_ai_analysis{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('', $response);
+    return $_response_object;
+}
+
+#
+# SummarizeSpreadsheetRequest
+#
+# Summarizes spreadsheet content using AI and returns the summary as a downloadable text file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SummarizeSpreadsheetRequest',
+            description => 'SummarizeSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'summarize_spreadsheet' } = { 
+    	summary => 'Summarizes spreadsheet content using AI and returns the summary as a downloadable text file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub summarize_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # AggregateCellsByColorRequest
 #
 # The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions.
@@ -370,6 +444,8 @@ sub check_cloud_service_health{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -414,6 +490,8 @@ sub export_spreadsheet_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -504,6 +582,8 @@ sub export_chart_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -549,6 +629,8 @@ sub export_table_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -590,6 +672,8 @@ sub export_range_as_format{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -630,6 +714,8 @@ sub convert_spreadsheet{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -670,6 +756,8 @@ sub convert_spreadsheet_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -710,6 +798,8 @@ sub convert_spreadsheet_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -752,6 +842,8 @@ sub convert_spreadsheet_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -793,6 +885,8 @@ sub convert_worksheet_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -834,6 +928,8 @@ sub convert_worksheet_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -875,6 +971,8 @@ sub convert_worksheet_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -916,6 +1014,8 @@ sub convert_worksheet_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -997,6 +1097,8 @@ sub convert_worksheet_to_html_table{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1039,6 +1141,8 @@ sub convert_table_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1081,6 +1185,8 @@ sub convert_table_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1123,6 +1229,8 @@ sub convert_table_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1165,6 +1273,8 @@ sub convert_table_to_html{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1209,6 +1319,8 @@ sub convert_table_to_json{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1251,6 +1363,8 @@ sub convert_range_to_image{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1293,6 +1407,8 @@ sub convert_range_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1335,6 +1451,8 @@ sub convert_range_to_csv{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1377,6 +1495,8 @@ sub convert_range_to_html{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -1506,6 +1626,8 @@ sub convert_chart_to_pdf{
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @fontsLocation  string   Use Custom fonts.  
+# @AutoRowsFit  string   (Optional) Autofits all rows in worksheets.  
+# @AutoColumnsFit  string   (Optional) Autofits all columns in worksheets.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #

@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 26.5
+    version: 26.6.4
   AsposeCellsCloud::Configuration:
     file: lib/AsposeCellsCloud/Configuration.pm
   AsposeCellsCloud::Role:
@@ -935,6 +935,10 @@ provides:
     file: lib/AsposeCellsCloud/Request/TranslateSpreadsheetRequest.pm
   AsposeCellsCloud::Request::TranslateTextFileRequest:
     file: lib/AsposeCellsCloud/Request/TranslateTextFileRequest.pm
+  AsposeCellsCloud::Request::ReportAIAnalysisRequest:
+    file: lib/AsposeCellsCloud/Request/ReportAIAnalysisRequest.pm
+  AsposeCellsCloud::Request::SummarizeSpreadsheetRequest:
+    file: lib/AsposeCellsCloud/Request/SummarizeSpreadsheetRequest.pm
   AsposeCellsCloud::Request::AggregateCellsByColorRequest:
     file: lib/AsposeCellsCloud/Request/AggregateCellsByColorRequest.pm
   AsposeCellsCloud::Request::MathCalculateRequest:
@@ -1872,5 +1876,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 26.5
+version: 26.6.4
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

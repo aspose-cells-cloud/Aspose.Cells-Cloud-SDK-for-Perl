@@ -66,6 +66,8 @@ sub new {
 # ConvertTableToPdfRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ConvertTableToPdfRequest.outStorageName : Output file Storage Name.  ,
 # ConvertTableToPdfRequest.fontsLocation : Use Custom fonts.  ,
+# ConvertTableToPdfRequest.AutoRowsFit : (Optional) Autofits all rows in worksheets.  ,
+# ConvertTableToPdfRequest.AutoColumnsFit : (Optional) Autofits all columns in worksheets.  ,
 # ConvertTableToPdfRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # ConvertTableToPdfRequest.password : The password for opening spreadsheet file.   
 
@@ -122,6 +124,14 @@ sub run_http_request {
 
     if(defined $self->fonts_location){
         $query_params->{'fontsLocation'} = $client->to_query_value($self->fonts_location);      
+    }
+
+    if(defined $self->auto_rows_fit){
+        $query_params->{'AutoRowsFit'} = $client->to_query_value($self->auto_rows_fit);      
+    }
+
+    if(defined $self->auto_columns_fit){
+        $query_params->{'AutoColumnsFit'} = $client->to_query_value($self->auto_columns_fit);      
     }
 
     if(defined $self->region){
@@ -191,6 +201,20 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'auto_rows_fit' => {
+     	datatype => 'string',
+     	base_name => 'AutoRowsFit',
+     	description => '(Optional) Autofits all rows in worksheets.',
+     	format => '',
+     	read_only => '',
+     		},
+     'auto_columns_fit' => {
+     	datatype => 'string',
+     	base_name => 'AutoColumnsFit',
+     	description => '(Optional) Autofits all columns in worksheets.',
+     	format => '',
+     	read_only => '',
+     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -215,6 +239,8 @@ __PACKAGE__->attribute_map( {
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'fonts_location' => 'fontsLocation',
+    'auto_rows_fit' => 'AutoRowsFit',
+    'auto_columns_fit' => 'AutoColumnsFit',
     'region' => 'region',
     'password' => 'password' 
 } );

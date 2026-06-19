@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::ConvertWorksheetToHtmlRequest;
+package AsposeCellsCloud::Request::ReportAIAnalysisRequest;
 
 require 5.6.0;
 use strict;
@@ -60,15 +60,9 @@ sub new {
 
 
 # Run Operation Request
-# ConvertWorksheetToHtmlRequest.Spreadsheet : Upload spreadsheet file.  ,
-# ConvertWorksheetToHtmlRequest.worksheet : worksheet name of spreadsheet.  ,
-# ConvertWorksheetToHtmlRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# ConvertWorksheetToHtmlRequest.outStorageName : Output file Storage Name.  ,
-# ConvertWorksheetToHtmlRequest.fontsLocation : Use Custom fonts.  ,
-# ConvertWorksheetToHtmlRequest.AutoRowsFit : (Optional) Autofits all rows in worksheets.  ,
-# ConvertWorksheetToHtmlRequest.AutoColumnsFit : (Optional) Autofits all columns in worksheets.  ,
-# ConvertWorksheetToHtmlRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# ConvertWorksheetToHtmlRequest.password : The password for opening spreadsheet file.   
+# ReportAIAnalysisRequest.Spreadsheet : Upload spreadsheet file.  ,
+# ReportAIAnalysisRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# ReportAIAnalysisRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -78,10 +72,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'convert_worksheet_to_html' } = { 
-    	summary => 'Converts a worksheet of spreadsheet on a local drive to the html file.',
+    __PACKAGE__->method_documentation->{ 'report_ai_analysis' } = { 
+    	summary => '',
         params => $params,
-        returns => 'string',
+        returns => '',
     };
 }
 
@@ -91,7 +85,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/convert/worksheet/html';
+    my $_resource_path = 'v4.0/cells/ai/report/analysis';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -105,30 +99,6 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
-    if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
-    }
-
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
-    }
-
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
-    }
-
-    if(defined $self->fonts_location){
-        $query_params->{'fontsLocation'} = $client->to_query_value($self->fonts_location);      
-    }
-
-    if(defined $self->auto_rows_fit){
-        $query_params->{'AutoRowsFit'} = $client->to_query_value($self->auto_rows_fit);      
-    }
-
-    if(defined $self->auto_columns_fit){
-        $query_params->{'AutoColumnsFit'} = $client->to_query_value($self->auto_columns_fit);      
-    }
-
     if(defined $self->region){
         $query_params->{'region'} = $client->to_query_value($self->region);      
     }
@@ -161,48 +131,6 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'worksheet' => {
-     	datatype => 'string',
-     	base_name => 'worksheet',
-     	description => 'worksheet name of spreadsheet.',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_path' => {
-     	datatype => 'string',
-     	base_name => 'outPath',
-     	description => '(Optional) The folder path where the workbook is stored. The default is null.',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_storage_name' => {
-     	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
-     	format => '',
-     	read_only => '',
-     		},
-     'fonts_location' => {
-     	datatype => 'string',
-     	base_name => 'fontsLocation',
-     	description => 'Use Custom fonts.',
-     	format => '',
-     	read_only => '',
-     		},
-     'auto_rows_fit' => {
-     	datatype => 'string',
-     	base_name => 'AutoRowsFit',
-     	description => '(Optional) Autofits all rows in worksheets.',
-     	format => '',
-     	read_only => '',
-     		},
-     'auto_columns_fit' => {
-     	datatype => 'string',
-     	base_name => 'AutoColumnsFit',
-     	description => '(Optional) Autofits all columns in worksheets.',
-     	format => '',
-     	read_only => '',
-     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -222,12 +150,6 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
-    'worksheet' => 'worksheet',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
-    'fonts_location' => 'fontsLocation',
-    'auto_rows_fit' => 'AutoRowsFit',
-    'auto_columns_fit' => 'AutoColumnsFit',
     'region' => 'region',
     'password' => 'password' 
 } );
