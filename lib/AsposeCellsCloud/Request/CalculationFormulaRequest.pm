@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::ReportAIAnalysisRequest;
+package AsposeCellsCloud::Request::CalculationFormulaRequest;
 
 require 5.6.0;
 use strict;
@@ -60,9 +60,11 @@ sub new {
 
 
 # Run Operation Request
-# ReportAIAnalysisRequest.Spreadsheet : Upload spreadsheet file.  ,
-# ReportAIAnalysisRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# ReportAIAnalysisRequest.password : The password for opening spreadsheet file.   
+# CalculationFormulaRequest.Spreadsheet : Upload spreadsheet file.  ,
+# CalculationFormulaRequest.worksheet :   ,
+# CalculationFormulaRequest.formula :   ,
+# CalculationFormulaRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# CalculationFormulaRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -72,10 +74,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'report_ai_analysis' } = { 
-    	summary => 'Intelligently analyzes spreadsheet data, identifies business scenarios, and generates professional data analysis reports.',
+    __PACKAGE__->method_documentation->{ 'calculation_formula' } = { 
+    	summary => '',
         params => $params,
-        returns => '',
+        returns => 'string',
     };
 }
 
@@ -85,7 +87,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/ai/report/analysis';
+    my $_resource_path = 'v4.0/cells/calculate/formula';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -99,6 +101,14 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
+    if(defined $self->worksheet){
+        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    }
+
+    if(defined $self->formula){
+        $query_params->{'formula'} = $client->to_query_value($self->formula);      
+    }
+
     if(defined $self->region){
         $query_params->{'region'} = $client->to_query_value($self->region);      
     }
@@ -131,6 +141,20 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'formula' => {
+     	datatype => 'string',
+     	base_name => 'formula',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -150,6 +174,8 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
+    'worksheet' => 'worksheet',
+    'formula' => 'formula',
     'region' => 'region',
     'password' => 'password' 
 } );

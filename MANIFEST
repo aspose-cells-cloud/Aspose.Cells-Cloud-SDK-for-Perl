@@ -51,6 +51,7 @@ docs/BrokenLinksResponse.md
 docs/CellsCloudFileInfoResponse.md
 docs/CellsCloudPublicKeyResponse.md
 docs/CellsCloudResponse.md
+docs/FormulaCalculateResultResponse.md
 docs/SaveResponse.md
 docs/SearchResponse.md
 docs/ImageOrPrintOptions.md
@@ -457,6 +458,7 @@ docs/ReportAIAnalysisRequest.md
 docs/SummarizeSpreadsheetRequest.md
 docs/AggregateCellsByColorRequest.md
 docs/MathCalculateRequest.md
+docs/CalculationFormulaRequest.md
 docs/PostAccessTokenRequest.md
 docs/GetAsposeCellsCloudStatusRequest.md
 docs/CheckCloudServiceHealthRequest.md
@@ -516,6 +518,7 @@ docs/GetStructureInRemoteSpreadsheetRequest.md
 docs/ProtectSpreadsheetRequest.md
 docs/UnprotectSpreadsheetRequest.md
 docs/SpreadsheetDigitalsignatureRequest.md
+docs/SmartMarkerTemplateRequest.md
 docs/SearchAllTextItemsInRemoteSpreadsheetRequest.md
 docs/SearchSpreadsheetAllTextItemsRequest.md
 docs/SearchSpreadsheetContentRequest.md
@@ -967,6 +970,7 @@ lib/AsposeCellsCloud/Object/BrokenLinksResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudFileInfoResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudPublicKeyResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudResponse.pm
+lib/AsposeCellsCloud/Object/FormulaCalculateResultResponse.pm
 lib/AsposeCellsCloud/Object/SaveResponse.pm
 lib/AsposeCellsCloud/Object/SearchResponse.pm
 lib/AsposeCellsCloud/Object/ImageOrPrintOptions.pm
@@ -1373,6 +1377,7 @@ lib/AsposeCellsCloud/Request/ReportAIAnalysisRequest.pm
 lib/AsposeCellsCloud/Request/SummarizeSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/AggregateCellsByColorRequest.pm
 lib/AsposeCellsCloud/Request/MathCalculateRequest.pm
+lib/AsposeCellsCloud/Request/CalculationFormulaRequest.pm
 lib/AsposeCellsCloud/Request/PostAccessTokenRequest.pm
 lib/AsposeCellsCloud/Request/GetAsposeCellsCloudStatusRequest.pm
 lib/AsposeCellsCloud/Request/CheckCloudServiceHealthRequest.pm
@@ -1432,6 +1437,7 @@ lib/AsposeCellsCloud/Request/GetStructureInRemoteSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/ProtectSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/UnprotectSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/SpreadsheetDigitalsignatureRequest.pm
+lib/AsposeCellsCloud/Request/SmartMarkerTemplateRequest.pm
 lib/AsposeCellsCloud/Request/SearchAllTextItemsInRemoteSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/SearchSpreadsheetAllTextItemsRequest.pm
 lib/AsposeCellsCloud/Request/SearchSpreadsheetContentRequest.pm

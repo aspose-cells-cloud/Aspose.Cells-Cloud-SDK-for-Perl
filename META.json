@@ -63,7 +63,7 @@
       },
       "AsposeCellsCloud::CellsApi" : {
          "file" : "lib/AsposeCellsCloud/CellsApi.pm",
-         "version" : "26.6.4"
+         "version" : "26.7"
       },    
       "AsposeCellsCloud::Configuration" : {
          "file" : "lib/AsposeCellsCloud/Configuration.pm"
@@ -223,6 +223,9 @@
       },
       "AsposeCellsCloud::Object::CellsCloudResponse" : {
          "file" : "lib/AsposeCellsCloud/Object/CellsCloudResponse.pm"
+      },
+      "AsposeCellsCloud::Object::FormulaCalculateResultResponse" : {
+         "file" : "lib/AsposeCellsCloud/Object/FormulaCalculateResultResponse.pm"
       },
       "AsposeCellsCloud::Object::SaveResponse" : {
          "file" : "lib/AsposeCellsCloud/Object/SaveResponse.pm"
@@ -1442,6 +1445,9 @@
       "AsposeCellsCloud::Request::MathCalculateRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/MathCalculateRequest.pm"
       },
+      "AsposeCellsCloud::Request::CalculationFormulaRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/CalculationFormulaRequest.pm"
+      },
       "AsposeCellsCloud::Request::PostAccessTokenRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/PostAccessTokenRequest.pm"
       },
@@ -1618,6 +1624,9 @@
       },
       "AsposeCellsCloud::Request::SpreadsheetDigitalsignatureRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SpreadsheetDigitalsignatureRequest.pm"
+      },
+      "AsposeCellsCloud::Request::SmartMarkerTemplateRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SmartMarkerTemplateRequest.pm"
       },
       "AsposeCellsCloud::Request::SearchAllTextItemsInRemoteSpreadsheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchAllTextItemsInRemoteSpreadsheetRequest.pm"
@@ -2812,6 +2821,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "26.6.4",
+   "version" : "26.7",
    "x_serialization_backend" : "JSON::PP version 2.27400"
 }

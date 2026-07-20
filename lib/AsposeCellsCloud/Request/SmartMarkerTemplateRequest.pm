@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::ReportAIAnalysisRequest;
+package AsposeCellsCloud::Request::SmartMarkerTemplateRequest;
 
 require 5.6.0;
 use strict;
@@ -60,9 +60,8 @@ sub new {
 
 
 # Run Operation Request
-# ReportAIAnalysisRequest.Spreadsheet : Upload spreadsheet file.  ,
-# ReportAIAnalysisRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
-# ReportAIAnalysisRequest.password : The password for opening spreadsheet file.   
+# SmartMarkerTemplateRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
+# SmartMarkerTemplateRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -72,10 +71,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'report_ai_analysis' } = { 
-    	summary => 'Intelligently analyzes spreadsheet data, identifies business scenarios, and generates professional data analysis reports.',
+    __PACKAGE__->method_documentation->{ 'smart_marker_template' } = { 
+    	summary => '',
         params => $params,
-        returns => '',
+        returns => 'string',
     };
 }
 
@@ -85,7 +84,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/ai/report/analysis';
+    my $_resource_path = 'v4.0/cells/report/smart/template';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -97,7 +96,7 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
  
     if(defined $self->region){
         $query_params->{'region'} = $client->to_query_value($self->region);      
@@ -108,10 +107,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -124,13 +119,6 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
-     	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
-     	format => '',
-     	read_only => '',
-     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -149,7 +137,6 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
     'region' => 'region',
     'password' => 'password' 
 } );
