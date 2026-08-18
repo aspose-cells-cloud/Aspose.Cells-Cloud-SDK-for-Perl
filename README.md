@@ -1,4 +1,4 @@
-![Aspose.Cells Cloud SDK for Perl](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-26.7-green?style=for-the-badge&logo=perl) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/perl/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) ![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)
+![Aspose.Cells Cloud SDK for Perl](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-26.8-green?style=for-the-badge&logo=perl) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/perl/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/badge/License-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) ![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)
 
 <p align="center">
   <a href="#english">English</a> |
@@ -121,16 +121,12 @@ close($fh);
 - **Import/Export Data**: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - **Security Management**: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Features & Enhancements in Version 26.7
+## Features & Enhancements in Version 26.8
 
-Full list of issues covering all changes in this release:
-
-| **Summary**                                                    | **Category** |
-| :------------------------------------------------------------- | :----------- |
-| Fix AutoFitsCanAutoFitsAttribute value data type.              | Bug          |
-| Support for the calculation formula in Aspose.Cells Cloud 4.0 Web APIs. | New Feature  |
-| Support for the smart template in Aspose.Cells Cloud 4.0 Web APIs.     | New Feature  |
-| Fix calc error about MathCalculate Web API.                    | Bug          |
+| **Summary** | **Category** |
+| :--- | :--- |
+| Enchent smart template feature. | Improvement |
+| A new AI data analysis API has been added. | New Feature |
 
 ## Available SDKs
 
@@ -140,7 +136,7 @@ The Aspose.Cells Cloud SDK is available in multiple popular programming language
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
-[![C#](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
+[![.NET](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
 
 [![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-node) [![Node.js](https://img.shields.io/badge/npm-install%20asposecellscloud-orange?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/asposecellscloud)
 
@@ -222,7 +218,7 @@ close($fh);
 | [MHTML](https://docs.fileformat.com/web/mhtml/)                   | MHTML 文件。                                                                                                                  | &radic;  | &radic;  |
 | [ODS](https://docs.fileformat.com/spreadsheet/ods/)               | ODS（OpenDocument 电子表格）。                                                                                                 | &radic;  | &radic;  |
 | [Numbers](https://docs.fileformat.com/spreadsheet/numbers/)       | 由 Apple "Numbers" 应用程序创建的文档，该应用程序是 Apple iWork 办公套件的一部分，运行在 Mac OS X 和 iOS 操作系统上。            | &radic;  |          |
-| [JSON](https://docs.fileformat.com/web/json/)                     | JavaScript 对象表示法。                                                                                                       | &radic;  | &radic;  |
+| [JSON](https://docs.fileformat.com/web/json/)                     | JavaScript 对象表示法。                                                                                                      | &radic;  | &radic;  |
 | [DIF](https://docs.fileformat.com/spreadsheet/dif/)               | 数据交换格式。                                                                                                                |          | &radic;  |
 | [PDF](https://docs.fileformat.com/pdf/)                           | Adobe 便携文档格式。                                                                                                           |          | &radic;  |
 | [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML 纸张规范格式。                                                                                                             |          | &radic;  |
@@ -231,12 +227,12 @@ close($fh);
 | [PNG](https://docs.fileformat.com/image/png/)                     | 便携网络图形格式。                                                                                                            |          | &radic;  |
 | [BMP](https://docs.fileformat.com/image/bmp/)                     | 位图图像格式。                                                                                                                |          | &radic;  |
 | [EMF](https://docs.fileformat.com/image/emf/)                     | 增强型图元文件格式。                                                                                                          |          | &radic;  |
-| [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG 是一种使用有损压缩的图像格式。                                                                                            |          | &radic;  |
+| [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG 是一种使用有损压缩的图像格式。                                                                                           |          | &radic;  |
 | [GIF](https://docs.fileformat.com/image/gif/)                     | 图形交换格式。                                                                                                                |          | &radic;  |
 | [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | 表示 Markdown 文档。                                                                                                          |          | &radic;  |
-| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | OpenOffice 和 StarOffice 使用的基于 XML 的格式。                                                                              | &radic;  | &radic;  |
-| [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | 以平面 XML 存储的 Open Document 格式。                                                                                        | &radic;  | &radic;  |
-| [DOCX](https://docs.fileformat.com/word-processing/docx/)         | 广为人知的 Microsoft Word 文档格式，结合了 XML 和二进制文件。                                                                   |          | &radic;  |
+| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | OpenOffice 和 StarOffice 使用的基于 XML 的格式。                                                                            | &radic;  | &radic;  |
+| [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | 以平面 XML 存储的 Open Document 格式。                                                                                      | &radic;  | &radic;  |
+| [DOCX](https://docs.fileformat.com/word-processing/docx/)         | 广为人知的 Microsoft Word 文档格式，结合了 XML 和二进制文件。                                                               |          | &radic;  |
 | [PPTX](https://docs.fileformat.com/presentation/pptx/)            | 基于 Microsoft PowerPoint Open XML 演示文稿文件格式。                                                                          |          | &radic;  |
 | [OTS](https://docs.fileformat.com/spreadsheet/ots/)               | OTS（OpenDocument 电子表格）。                                                                                                 | &radic;  | &radic;  |
 | [XML](https://docs.fileformat.com/web/xml/)                       | XML 文件。                                                                                                                    | &radic;  | &radic;  |
@@ -268,16 +264,12 @@ close($fh);
 - **数据导入/导出**：支持从各种数据源导入数据到电子表格，以及将电子表格数据导出到其他格式。
 - **安全管理**：提供数据加密、访问控制和权限管理等一系列安全功能，保障电子表格数据的安全性和完整性。
 
-## 版本 26.7 的功能与增强
+## 版本 26.8 的功能与增强
 
-涵盖此版本所有更改的完整问题列表：
-
-| **摘要**                                                        | **类别**   |
-| :-------------------------------------------------------------- | :--------- |
-| 修复 AutoFitsCanAutoFitsAttribute 值数据类型。                    | 缺陷修复   |
-| 在 Aspose.Cells Cloud 4.0 Web API 中支持计算公式。                | 新功能     |
-| 在 Aspose.Cells Cloud 4.0 Web API 中支持智能模板。                | 新功能     |
-| 修复 MathCalculate Web API 的计算错误。                           | 缺陷修复   |
+| **摘要** | **类别** |
+| :--- | :--- |
+| Enchent smart template feature. | Improvement |
+| A new AI data analysis API has been added. | New Feature |
 
 ## 可用的 SDK
 
@@ -287,7 +279,7 @@ Aspose.Cells Cloud SDK 提供多种流行编程语言版本，使开发者能够
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
-[![C#](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
+[![.NET](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
 
 [![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-node) [![Node.js](https://img.shields.io/badge/npm-install%20asposecellscloud-orange?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/asposecellscloud)
 
@@ -376,9 +368,9 @@ close($fh);
 | [SVG](https://docs.fileformat.com/page-description-language/svg/) | Scalable Vector Graphics Format。                                                                                             |              | &radic;  |
 | [TIFF](https://docs.fileformat.com/image/tiff/)                   | Tagged Image File Format。                                                                                                    |              | &radic;  |
 | [PNG](https://docs.fileformat.com/image/png/)                     | Portable Network Graphics Format。                                                                                            |              | &radic;  |
-| [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format。                                                                                                         |              | &radic;  |
+| [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format.                                                                                                          |              | &radic;  |
 | [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced Metafile Format。                                                                                                    |              | &radic;  |
-| [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG は非可逆圧縮を使用する画像形式です。                                                                                      |              | &radic;  |
+| [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG は非可逆圧縮を使用する画像形式です。                                                                                    |              | &radic;  |
 | [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format。                                                                                                |              | &radic;  |
 | [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Markdown ドキュメントを表します。                                                                                              |              | &radic;  |
 | [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | OpenOffice および StarOffice で使用される XML ベースの形式。                                                                   | &radic;      | &radic;  |
@@ -415,16 +407,12 @@ close($fh);
 - **データのインポート/エクスポート**: さまざまなソースからスプレッドシートへのデータインポート、およびスプレッドシートデータの他の形式へのエクスポートを容易にします。
 - **セキュリティ管理**: データ暗号化、アクセス制御、権限管理などのセキュリティ機能を提供し、スプレッドシートデータのセキュリティと整合性を保護します。
 
-## バージョン 26.7 の機能と拡張
+## バージョン 26.8 の機能と拡張
 
-このリリースのすべての変更を含む問題の完全なリスト：
-
-| **概要**                                                        | **カテゴリ** |
-| :-------------------------------------------------------------- | :----------- |
-| AutoFitsCanAutoFitsAttribute 値データ型を修正。                   | バグ修正     |
-| Aspose.Cells Cloud 4.0 Web API での計算式をサポート。             | 新機能       |
-| Aspose.Cells Cloud 4.0 Web API でのスマートテンプレートをサポート。 | 新機能       |
-| MathCalculate Web API の計算エラーを修正。                        | バグ修正     |
+| **概要** | **カテゴリ** |
+| :--- | :--- |
+| Enchent smart template feature. | Improvement |
+| A new AI data analysis API has been added. | New Feature |
 
 ## 利用可能な SDK
 
@@ -434,7 +422,7 @@ Aspose.Cells Cloud SDK は複数の一般的なプログラミング言語で利
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
-[![C#](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
+[![.NET](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
 
 [![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-node) [![Node.js](https://img.shields.io/badge/npm-install%20asposecellscloud-orange?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/asposecellscloud)
 
@@ -508,7 +496,7 @@ close($fh);
 | [XLT](https://docs.fileformat.com/spreadsheet/xlt/)               | Excel 97 - Excel 2003-Vorlage.                                                                                                            | &radic;   | &radic;       |
 | [XLTX](https://docs.fileformat.com/spreadsheet/xltx/)             | Excel-Vorlage.                                                                                                                            | &radic;   | &radic;       |
 | [XLTM](https://docs.fileformat.com/spreadsheet/xltm/)             | Excel-Vorlage mit Makros.                                                                                                                 | &radic;   | &radic;       |
-| [XLAM](https://docs.fileformat.com/spreadsheet/xlam/)             | Eine Excel-Add-In-Datei mit Makros, die zum Hinzufügen neuer Funktionen zu Excel verwendet wird.                                          |           | &radic;       |
+| [XLAM](https://docs.fileformat.com/spreadsheet/xlam/)             | Excel-Add-In-Datei mit Makros, die zum Hinzufügen neuer Funktionen zu Excel verwendet wird.                                              |           | &radic;       |
 | [CSV](https://docs.fileformat.com/spreadsheet/csv/)               | CSV (Comma Separated Value)-Datei.                                                                                                        | &radic;   | &radic;       |
 | [TSV](https://docs.fileformat.com/spreadsheet/tsv/)               | TSV (Tab-separated values)-Datei.                                                                                                         | &radic;   | &radic;       |
 | [TXT](https://docs.fileformat.com/word-processing/txt/)           | Durch Trennzeichen getrennte reine Textdatei.                                                                                             | &radic;   | &radic;       |
@@ -518,13 +506,13 @@ close($fh);
 | [Numbers](https://docs.fileformat.com/spreadsheet/numbers/)       | Dokumente, die mit Apples Anwendung "Numbers" erstellt wurden, die Teil von Apples iWork-Office-Suite ist und unter Mac OS X und iOS läuft. | &radic;   |               |
 | [JSON](https://docs.fileformat.com/web/json/)                     | JavaScript Object Notation.                                                                                                               | &radic;   | &radic;       |
 | [DIF](https://docs.fileformat.com/spreadsheet/dif/)               | Data Interchange Format.                                                                                                                  |           | &radic;       |
-| [PDF](https://docs.fileformat.com/pdf/)                           | Adobe Portable Document Format.                                                                                                           |           | &radic;       |
-| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification Format.                                                                                                           |           | &radic;       |
-| [SVG](https://docs.fileformat.com/page-description-language/svg/) | Scalable Vector Graphics Format.                                                                                                          |           | &radic;       |
+| [PDF](https://docs.fileformat.com/pdf/)                           | Adobe Portable Document Format.                                                                                                            |           | &radic;       |
+| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification Format.                                                                                                            |           | &radic;       |
+| [SVG](https://docs.fileformat.com/page-description-language/svg/) | Scalable Vector Graphics Format.                                                                                                           |           | &radic;       |
 | [TIFF](https://docs.fileformat.com/image/tiff/)                   | Tagged Image File Format.                                                                                                                 |           | &radic;       |
-| [PNG](https://docs.fileformat.com/image/png/)                     | Portable Network Graphics Format.                                                                                                         |           | &radic;       |
-| [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format.                                                                                                                      |           | &radic;       |
-| [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced Metafile Format.                                                                                                                 |           | &radic;       |
+| [PNG](https://docs.fileformat.com/image/png/)                     | Portable Network Graphics Format.                                                                                                          |           | &radic;       |
+| [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format.                                                                                                                       |           | &radic;       |
+| [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced Metafile Format.                                                                                                                  |           | &radic;       |
 | [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG ist ein Bildformat, das verlustbehaftete Komprimierung verwendet.                                                                    |           | &radic;       |
 | [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format.                                                                                                             |           | &radic;       |
 | [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Stellt ein Markdown-Dokument dar.                                                                                                         |           | &radic;       |
@@ -562,16 +550,12 @@ close($fh);
 - **Datenimport/-export**: Ermöglicht den Import von Daten aus verschiedenen Quellen in Tabellen und den Export von Tabellendaten in andere Formate.
 - **Sicherheitsmanagement**: Bietet eine Reihe von Sicherheitsfunktionen wie Datenverschlüsselung, Zugriffskontrolle und Berechtigungsverwaltung zum Schutz der Sicherheit und Integrität von Tabellendaten.
 
-## Funktionen & Erweiterungen in Version 26.7
-
-Vollständige Liste der Issues, die alle Änderungen in dieser Version abdecken:
+## Funktionen & Erweiterungen in Version 26.8
 
 | **Zusammenfassung**                                             | **Kategorie**  |
 | :-------------------------------------------------------------- | :------------- |
-| Fehlerhaften Datentyp des AutoFitsCanAutoFitsAttribute-Werts beheben. | Bug           |
-| Unterstützung für die Berechnungsformel in Aspose.Cells Cloud 4.0 Web-APIs. | Neue Funktion |
-| Unterstützung für die Smart-Vorlage in Aspose.Cells Cloud 4.0 Web-APIs.   | Neue Funktion |
-| Berechnungsfehler der MathCalculate Web-API beheben.            | Bug            |
+| Enchent smart template feature.                                 | Improvement |
+| A new AI data analysis API has been added.                      | New Feature |
 
 ## Verfügbare SDKs
 
@@ -581,7 +565,7 @@ Das Aspose.Cells Cloud SDK ist in mehreren gängigen Programmiersprachen verfüg
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
-[![C#](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
+[![.NET](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Install%20Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
 
 [![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-node) [![Node.js](https://img.shields.io/badge/npm-install%20asposecellscloud-orange?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/asposecellscloud)
 

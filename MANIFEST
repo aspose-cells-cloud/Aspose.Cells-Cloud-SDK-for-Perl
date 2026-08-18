@@ -456,6 +456,7 @@ docs/TranslateSpreadsheetRequest.md
 docs/TranslateTextFileRequest.md
 docs/ReportAIAnalysisRequest.md
 docs/SummarizeSpreadsheetRequest.md
+docs/CategorizeSpreadsheetRequest.md
 docs/AggregateCellsByColorRequest.md
 docs/MathCalculateRequest.md
 docs/CalculationFormulaRequest.md
@@ -1375,6 +1376,7 @@ lib/AsposeCellsCloud/Request/TranslateSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/TranslateTextFileRequest.pm
 lib/AsposeCellsCloud/Request/ReportAIAnalysisRequest.pm
 lib/AsposeCellsCloud/Request/SummarizeSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/CategorizeSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/AggregateCellsByColorRequest.pm
 lib/AsposeCellsCloud/Request/MathCalculateRequest.pm
 lib/AsposeCellsCloud/Request/CalculationFormulaRequest.pm

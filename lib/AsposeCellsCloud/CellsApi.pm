@@ -246,6 +246,46 @@ sub summarize_spreadsheet{
 }
 
 #
+# CategorizeSpreadsheetRequest
+#
+# AI-powered data categorization: Automatically classifies spreadsheet column data into logical groups.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @targetColumn  string (required)  The column name to categorize (e.g., "Expense Item", "Product Name"). Required.  
+# @sheetName  string   Optional: The worksheet name to process. If not specified, all worksheets will be processed.  
+# @newColumnName  string   Optional: Name for the new categorization column (default: "AI Category").  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'CategorizeSpreadsheetRequest',
+            description => 'CategorizeSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'categorize_spreadsheet' } = { 
+    	summary => 'AI-powered data categorization: Automatically classifies spreadsheet column data into logical groups.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub categorize_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # AggregateCellsByColorRequest
 #
 # The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions.
