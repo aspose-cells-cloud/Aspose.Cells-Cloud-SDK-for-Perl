@@ -121,12 +121,12 @@ close($fh);
 - **Import/Export Data**: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - **Security Management**: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Features & Enhancements in Version 26.9
+## Features and Enhancements
 
-| **Summary** | **Category** |
-| :--- | :--- |
-| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
-| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
+| **Summary**                                                                                                   | **Category** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement  |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug  |
 
 ## Available SDKs
 
@@ -238,12 +238,12 @@ close($fh);
 | [XML](https://docs.fileformat.com/web/xml/)                       | XML 文件。                                                                                                                    | &radic;  | &radic;  |
 | [HTM](https://docs.fileformat.com/web/htm/)                       | HTM 文件。                                                                                                                    | &radic;  | &radic;  |
 | [TIF](https://docs.fileformat.com/image/tiff/)                    | 标记图像文件格式。                                                                                                            |          | &radic;  |
-| [WMF](https://docs.fileformat.com/image/wmf/)                     | Windows 图元文件格式。                                                                                                        |          | &radic;  |
-| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | 打印机命令语言格式。                                                                                                          |          | &radic;  |
-| [AZW3](https://docs.fileformat.com/ebook/azw3/)                   | AZW3/KF8 文件格式。                                                                                                           |          | &radic;  |
-| [EPUB](https://docs.fileformat.com/ebook/epub/)                   | EPUB 文件格式。                                                                                                               |          | &radic;  |
-| [DBF](https://docs.fileformat.com/database/dbf/)                  | 数据库文件格式。                                                                                                              |          | &radic;  |
-| [XHTML](https://docs.fileformat.com/web/xhtml/)                   | XHTML 文件格式。                                                                                                              |          | &radic;  |
+| [WMF](https://docs.fileformat.com/image/wmf/)                     | Windows 图元文件格式。                                                                                                         |          | &radic;  |
+| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | 打印机命令语言格式。                                                                                                           |          | &radic;  |
+| [AZW3](https://docs.fileformat.com/ebook/azw3/)                   | AZW3/KF8 文件格式。                                                                                                            |          | &radic;  |
+| [EPUB](https://docs.fileformat.com/ebook/epub/)                   | EPUB 文件格式。                                                                                                                |          | &radic;  |
+| [DBF](https://docs.fileformat.com/database/dbf/)                  | 数据库文件格式。                                                                                                               |          | &radic;  |
+| [XHTML](https://docs.fileformat.com/web/xhtml/)                   | XHTML 文件格式。                                                                                                               |          | &radic;  |
 
 ## 架构
 
@@ -258,7 +258,7 @@ close($fh);
 - **数据处理**：强大的数据处理功能，包括读取、写入、修改单元格数据、执行公式计算、和格式化数据。
 - **公式计算**：内置公式引擎可处理 Excel 中的复杂公式计算并返回准确结果。
 - **图表操作**：用户可以创建、编辑和删除 Excel 文件中的图表，满足数据分析和可视化需求。
-- **表格处理**：提供强大的格式操作处理能力，包括创建、编辑、格式化和转换等功能。
+- **表格处理**：提供强大的格式操作处理能力，包括创建、编辑、格式化和转换等功能，满足多种格式处理需求。
 - **数据验证**：包含数据验证功能，可设置单元格数据类型、范围和唯一性，确保数据准确性和完整性。
 - **批量处理**：支持批量处理多个 Excel 文档，如批量格式转换、数据提取和样式应用。
 - **数据导入/导出**：支持从各种数据源导入数据到电子表格，以及将电子表格数据导出到其他格式。
@@ -354,9 +354,9 @@ close($fh);
 | [XLTX](https://docs.fileformat.com/spreadsheet/xltx/)             | Excel テンプレート。                                                                                                          | &radic;      | &radic;  |
 | [XLTM](https://docs.fileformat.com/spreadsheet/xltm/)             | Excel マクロ有効テンプレート。                                                                                                | &radic;      | &radic;  |
 | [XLAM](https://docs.fileformat.com/spreadsheet/xlam/)             | Excel に新しい機能を追加するために使用される Excel マクロ有効アドインファイル。                                                  |              | &radic;  |
-| [CSV](https://docs.fileformat.com/spreadsheet/csv/)               | CSV（カンマ区切り値）ファイル。                                                                                                | &radic;      | &radic;  |
-| [TSV](https://docs.fileformat.com/spreadsheet/tsv/)               | TSV（タブ区切り値）ファイル。                                                                                                 | &radic;      | &radic;  |
-| [TXT](https://docs.fileformat.com/word-processing/txt/)           | 区切り文字付きプレーンテキストファイル。                                                                                      | &radic;      | &radic;  |
+| [CSV](https://docs.fileformat.com/spreadsheet/csv/)               | CSV（カンマ区切り値）ファイル。                                                                                               | &radic;      | &radic;  |
+| [TSV](https://docs.fileformat.com/spreadsheet/tsv/)               | TSV（タブ区切り値）ファイル。                                                                                                | &radic;      | &radic;  |
+| [TXT](https://docs.fileformat.com/word-processing/txt/)           | 区切り文字付きプレーンテキストファイル。                                                                                     | &radic;      | &radic;  |
 | [HTML](https://docs.fileformat.com/web/html/)                     | HTML 形式。                                                                                                                   | &radic;      | &radic;  |
 | [MHTML](https://docs.fileformat.com/web/mhtml/)                   | MHTML ファイル。                                                                                                              | &radic;      | &radic;  |
 | [ODS](https://docs.fileformat.com/spreadsheet/ods/)               | ODS（OpenDocument スプレッドシート）。                                                                                         | &radic;      | &radic;  |
@@ -499,7 +499,7 @@ close($fh);
 | [XLAM](https://docs.fileformat.com/spreadsheet/xlam/)             | Excel-Add-In-Datei mit Makros, die zum Hinzufügen neuer Funktionen zu Excel verwendet wird.                                              |           | &radic;       |
 | [CSV](https://docs.fileformat.com/spreadsheet/csv/)               | CSV (Comma Separated Value)-Datei.                                                                                                        | &radic;   | &radic;       |
 | [TSV](https://docs.fileformat.com/spreadsheet/tsv/)               | TSV (Tab-separated values)-Datei.                                                                                                         | &radic;   | &radic;       |
-| [TXT](https://docs.fileformat.com/word-processing/txt/)           | Durch Trennzeichen getrennte reine Textdatei.                                                                                             | &radic;   | &radic;       |
+| [TXT](https://docs.fileformat.com/word-processing/txt/)           | Durch Trennzeichen getrennte reine Textdatei.                                                                                               | &radic;   | &radic;       |
 | [HTML](https://docs.fileformat.com/web/html/)                     | HTML-Format.                                                                                                                              | &radic;   | &radic;       |
 | [MHTML](https://docs.fileformat.com/web/mhtml/)                   | MHTML-Datei.                                                                                                                              | &radic;   | &radic;       |
 | [ODS](https://docs.fileformat.com/spreadsheet/ods/)               | ODS (OpenDocument Spreadsheet).                                                                                                           | &radic;   | &radic;       |
@@ -543,7 +543,7 @@ close($fh);
 - **Dateiformatierung**: Unterstützt die Formatierung von Zellen, Schriftarten, Farben und Ausrichtungsmodi in Excel-Dateien entsprechend spezifischer Anforderungen.
 - **Datenverarbeitung**: Leistungsstarke Funktionen zur Datenverarbeitung, einschließlich Lesen, Schreiben, Ändern von Zelldaten, Durchführen von Formelberechnungen und Formatieren von Daten.
 - **Formelberechnung**: Die integrierte Formel-Engine verarbeitet komplexe Formelberechnungen in Excel und liefert genaue Ergebnisse.
-- **Diagrammbearbeitung**: Benutzer können Diagramme aus Excel-Dateien für Datenanalyse- und Visualisierungsanforderungen erstellen, bearbeiten und löschen.
+- **Diagrammbearbeitung**: Benutzer können Diagramme aus Excel-Dateien für Datenanalyse- und Visualisierungsbedürfnisse erstellen, bearbeiten und löschen.
 - **Tabellenverarbeitung**: Bietet robuste Verarbeitungsfunktionen für verschiedene Formatoperationen wie Erstellung, Bearbeitung, Formatierung und Konvertierung.
 - **Datenvalidierung**: Enthält Datenvalidierungsfunktionen zum Festlegen von Zelldatentyp, Bereich und Eindeutigkeit, um Datengenauigkeit und -integrität sicherzustellen.
 - **Stapelverarbeitung**: Unterstützt die Stapelverarbeitung mehrerer Excel-Dokumente, wie z. B. Stapelformatkonvertierung, Datenextraktion und Stilanwendung.
