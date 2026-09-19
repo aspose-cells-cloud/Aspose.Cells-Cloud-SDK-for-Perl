@@ -60,6 +60,8 @@ sub new {
 
 
 # Run Operation Request
+# SmartMarkerTemplateRequest.datafile : Upload smartmarker template json data file.  ,
+# SmartMarkerTemplateRequest.templatefile : Upload smartmarker template file.  ,
 # SmartMarkerTemplateRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # SmartMarkerTemplateRequest.password : The password for opening spreadsheet file.   
 
@@ -96,7 +98,7 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
     if(defined $self->region){
         $query_params->{'region'} = $client->to_query_value($self->region);      
@@ -107,6 +109,15 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
+    if (defined $self->datafile) {   
+        $form_params->{basename($self->datafile)} = [$self->datafile ,basename($self->datafile),'application/octet-stream'];
+    }
+
+
+    if (defined $self->templatefile) {   
+        $form_params->{basename($self->templatefile)} = [$self->templatefile ,basename($self->templatefile),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -119,6 +130,20 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
+     'datafile' => {
+     	datatype => 'string',
+     	base_name => 'datafile',
+     	description => 'Upload smartmarker template json data file.',
+     	format => '',
+     	read_only => '',
+     		},
+     'templatefile' => {
+     	datatype => 'string',
+     	base_name => 'templatefile',
+     	description => 'Upload smartmarker template file.',
+     	format => '',
+     	read_only => '',
+     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -137,6 +162,8 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
+    'datafile' => 'datafile',
+    'templatefile' => 'templatefile',
     'region' => 'region',
     'password' => 'password' 
 } );

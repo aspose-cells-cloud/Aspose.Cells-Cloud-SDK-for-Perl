@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 26.8
+    version: 26.9
   AsposeCellsCloud::Configuration:
     file: lib/AsposeCellsCloud/Configuration.pm
   AsposeCellsCloud::Role:
@@ -1884,5 +1884,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 26.8
+version: 26.9
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

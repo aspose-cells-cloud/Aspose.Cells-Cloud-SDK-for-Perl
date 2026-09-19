@@ -1,4 +1,4 @@
-![Aspose.Cells Cloud SDK for Perl](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-26.8-green?style=for-the-badge&logo=perl) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/perl/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/badge/License-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) ![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)
+![Aspose.Cells Cloud SDK for Perl](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-26.9-green?style=for-the-badge&logo=perl) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/perl/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/badge/License-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) ![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)
 
 <p align="center">
   <a href="#english">English</a> |
@@ -121,12 +121,12 @@ close($fh);
 - **Import/Export Data**: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - **Security Management**: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Features & Enhancements in Version 26.8
+## Features & Enhancements in Version 26.9
 
 | **Summary** | **Category** |
 | :--- | :--- |
-| Enchent smart template feature. | Improvement |
-| A new AI data analysis API has been added. | New Feature |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
 
 ## Available SDKs
 
@@ -255,7 +255,7 @@ close($fh);
 
 - **文件操作**：用户可以上传、下载、删除和管理存储在云端的 Excel 文件。
 - **文件格式化**：支持 Excel 文件中单元格、字体、颜色和对齐方式的格式化，以满足特定需求。
-- **数据处理**：强大的数据处理功能，包括读取、写入、修改单元格数据、执行公式计算和格式化数据。
+- **数据处理**：强大的数据处理功能，包括读取、写入、修改单元格数据、执行公式计算、和格式化数据。
 - **公式计算**：内置公式引擎可处理 Excel 中的复杂公式计算并返回准确结果。
 - **图表操作**：用户可以创建、编辑和删除 Excel 文件中的图表，满足数据分析和可视化需求。
 - **表格处理**：提供强大的格式操作处理能力，包括创建、编辑、格式化和转换等功能。
@@ -264,12 +264,12 @@ close($fh);
 - **数据导入/导出**：支持从各种数据源导入数据到电子表格，以及将电子表格数据导出到其他格式。
 - **安全管理**：提供数据加密、访问控制和权限管理等一系列安全功能，保障电子表格数据的安全性和完整性。
 
-## 版本 26.8 的功能与增强
+## 版本 26.9 的功能与增强
 
 | **摘要** | **类别** |
 | :--- | :--- |
-| Enchent smart template feature. | Improvement |
-| A new AI data analysis API has been added. | New Feature |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
 
 ## 可用的 SDK
 
@@ -407,12 +407,12 @@ close($fh);
 - **データのインポート/エクスポート**: さまざまなソースからスプレッドシートへのデータインポート、およびスプレッドシートデータの他の形式へのエクスポートを容易にします。
 - **セキュリティ管理**: データ暗号化、アクセス制御、権限管理などのセキュリティ機能を提供し、スプレッドシートデータのセキュリティと整合性を保護します。
 
-## バージョン 26.8 の機能と拡張
+## バージョン 26.9 の機能と拡張
 
 | **概要** | **カテゴリ** |
 | :--- | :--- |
-| Enchent smart template feature. | Improvement |
-| A new AI data analysis API has been added. | New Feature |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
 
 ## 利用可能な SDK
 
@@ -515,8 +515,8 @@ close($fh);
 | [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced Metafile Format.                                                                                                                  |           | &radic;       |
 | [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG ist ein Bildformat, das verlustbehaftete Komprimierung verwendet.                                                                    |           | &radic;       |
 | [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format.                                                                                                             |           | &radic;       |
-| [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Stellt ein Markdown-Dokument dar.                                                                                                         |           | &radic;       |
-| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | Ein XML-basiertes Format, das von OpenOffice und StarOffice verwendet wird.                                                               | &radic;   | &radic;       |
+| [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Stellt ein Markdown-Dokument dar.                                                                                                          |           | &radic;       |
+| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | Ein XML-basierter Format, das von OpenOffice und StarOffice verwendet wird.                                                               | &radic;   | &radic;       |
 | [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | Ein als flaches XML gespeichertes Open Document-Format.                                                                                   | &radic;   | &radic;       |
 | [DOCX](https://docs.fileformat.com/word-processing/docx/)         | Ein bekanntes Format für Microsoft Word-Dokumente, das XML- und Binärdateien kombiniert.                                                   |           | &radic;       |
 | [PPTX](https://docs.fileformat.com/presentation/pptx/)            | Das PPTX-Format basiert auf dem Microsoft PowerPoint Open XML-Präsentationsdateiformat.                                                    |           | &radic;       |
@@ -525,7 +525,7 @@ close($fh);
 | [HTM](https://docs.fileformat.com/web/htm/)                       | HTM-Datei.                                                                                                                                | &radic;   | &radic;       |
 | [TIF](https://docs.fileformat.com/image/tiff/)                    | Tagged Image File Format.                                                                                                                 |           | &radic;       |
 | [WMF](https://docs.fileformat.com/image/wmf/)                     | Windows Metafile Format.                                                                                                                  |           | &radic;       |
-| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | Printer Command Language Format.                                                                                                          |           | &radic;       |
+| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | Printer Command Language Format.                                                                                                           |           | &radic;       |
 | [AZW3](https://docs.fileformat.com/ebook/azw3/)                   | AZW3/KF8-Dateiformat.                                                                                                                     |           | &radic;       |
 | [EPUB](https://docs.fileformat.com/ebook/epub/)                   | EPUB-Dateiformat.                                                                                                                         |           | &radic;       |
 | [DBF](https://docs.fileformat.com/database/dbf/)                  | Datenbank-Dateiformat.                                                                                                                    |           | &radic;       |
@@ -550,12 +550,12 @@ close($fh);
 - **Datenimport/-export**: Ermöglicht den Import von Daten aus verschiedenen Quellen in Tabellen und den Export von Tabellendaten in andere Formate.
 - **Sicherheitsmanagement**: Bietet eine Reihe von Sicherheitsfunktionen wie Datenverschlüsselung, Zugriffskontrolle und Berechtigungsverwaltung zum Schutz der Sicherheit und Integrität von Tabellendaten.
 
-## Funktionen & Erweiterungen in Version 26.8
+## Funktionen & Erweiterungen in Version 26.9
 
 | **Zusammenfassung**                                             | **Kategorie**  |
 | :-------------------------------------------------------------- | :------------- |
-| Enchent smart template feature.                                 | Improvement |
-| A new AI data analysis API has been added.                      | New Feature |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud.      | Bug |
 
 ## Verfügbare SDKs
 

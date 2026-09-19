@@ -62,6 +62,9 @@ sub new {
 # Run Operation Request
 # TranslateTextFileRequest.Spreadsheet : Upload spreadsheet file.  ,
 # TranslateTextFileRequest.targetLanguage : The target language code for translation (e.g., "es", "fr", "de").  ,
+# TranslateTextFileRequest.customEndpoint :   ,
+# TranslateTextFileRequest.customApiKey :   ,
+# TranslateTextFileRequest.customModel :   ,
 # TranslateTextFileRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # TranslateTextFileRequest.password : The password for opening spreadsheet file.   
 
@@ -104,6 +107,18 @@ sub run_http_request {
         $query_params->{'targetLanguage'} = $client->to_query_value($self->target_language);      
     }
 
+    if(defined $self->custom_endpoint){
+        $query_params->{'customEndpoint'} = $client->to_query_value($self->custom_endpoint);      
+    }
+
+    if(defined $self->custom_api_key){
+        $query_params->{'customApiKey'} = $client->to_query_value($self->custom_api_key);      
+    }
+
+    if(defined $self->custom_model){
+        $query_params->{'customModel'} = $client->to_query_value($self->custom_model);      
+    }
+
     if(defined $self->region){
         $query_params->{'region'} = $client->to_query_value($self->region);      
     }
@@ -143,6 +158,27 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'custom_endpoint' => {
+     	datatype => 'string',
+     	base_name => 'customEndpoint',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'custom_api_key' => {
+     	datatype => 'string',
+     	base_name => 'customApiKey',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'custom_model' => {
+     	datatype => 'string',
+     	base_name => 'customModel',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -163,6 +199,9 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
     'target_language' => 'targetLanguage',
+    'custom_endpoint' => 'customEndpoint',
+    'custom_api_key' => 'customApiKey',
+    'custom_model' => 'customModel',
     'region' => 'region',
     'password' => 'password' 
 } );

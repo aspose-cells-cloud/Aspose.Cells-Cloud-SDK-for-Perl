@@ -102,6 +102,9 @@ sub decompose_user_task{
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @targetLanguage  string (required)  The target language code for translation (e.g., "es", "fr", "de").  
+# @customEndpoint  string   Optional. Full Chat Completions endpoint URL.  
+# @customApiKey  string   Optional. API key for the custom AI service.  
+# @customModel  string   Optional. Model name to use.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -140,6 +143,9 @@ sub translate_spreadsheet{
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @targetLanguage  string (required)  The target language code for translation (e.g., "es", "fr", "de").  
+# @customEndpoint  string     
+# @customApiKey  string     
+# @customModel  string     
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -2899,6 +2905,8 @@ sub spreadsheet_digitalsignature{
 #
 # 
 # 
+# @datafile  string (required)  Upload smartmarker template json data file.  
+# @templatefile  string (required)  Upload smartmarker template file.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
