@@ -62,9 +62,9 @@ sub new {
 # Run Operation Request
 # SearchContentInRemoteRangeRequest.name : Specify the search workbook file name.  ,
 # SearchContentInRemoteRangeRequest.worksheet : Specify the search worksheet name.  ,
-# SearchContentInRemoteRangeRequest.cellArea : Specify the search cell area.  ,
+# SearchContentInRemoteRangeRequest.cellArea : Specify the search cell area (e.g., "A1:C10").  ,
 # SearchContentInRemoteRangeRequest.searchText : Specify the search content.  ,
-# SearchContentInRemoteRangeRequest.ignoringCase : Ignore the text of the search.  ,
+# SearchContentInRemoteRangeRequest.ignoringCase : Ignore the text case of the search. Default is true.  ,
 # SearchContentInRemoteRangeRequest.folder : The folder path where the workbook is stored.  ,
 # SearchContentInRemoteRangeRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
 # SearchContentInRemoteRangeRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
@@ -93,7 +93,7 @@ sub run_http_request {
     # parse inputs
     my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/search/content';
 
-    my $_method = 'PUT';
+    my $_method = 'GET';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -175,7 +175,7 @@ __PACKAGE__->method_documentation({
      'cell_area' => {
      	datatype => 'string',
      	base_name => 'cellArea',
-     	description => 'Specify the search cell area.',
+     	description => 'Specify the search cell area (e.g., "A1:C10").',
      	format => '',
      	read_only => '',
      		},
@@ -189,7 +189,7 @@ __PACKAGE__->method_documentation({
      'ignoring_case' => {
      	datatype => 'string',
      	base_name => 'ignoringCase',
-     	description => 'Ignore the text of the search.',
+     	description => 'Ignore the text case of the search. Default is true.',
      	format => '',
      	read_only => '',
      		},

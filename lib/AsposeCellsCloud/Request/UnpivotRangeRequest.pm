@@ -61,9 +61,9 @@ sub new {
 
 # Run Operation Request
 # UnpivotRangeRequest.Spreadsheet : Upload spreadsheet file.  ,
-# UnpivotRangeRequest.worksheet : The worksheet name.  ,
-# UnpivotRangeRequest.cellArea : A specified data range  ,
-# UnpivotRangeRequest.skipEmptyValue :   ,
+# UnpivotRangeRequest.worksheet : The worksheet name containing the data to unpivot.  ,
+# UnpivotRangeRequest.cellArea : The cell range to unpivot (e.g., "A1:D10").  ,
+# UnpivotRangeRequest.skipEmptyValue : If true, empty cells are skipped in the output. Default is true.  ,
 # UnpivotRangeRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # UnpivotRangeRequest.outStorageName : Output file Storage Name.  ,
 # UnpivotRangeRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
@@ -78,7 +78,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'unpivot_range' } = { 
-    	summary => 'Switch rows and columns in the spreadsheet.',
+    	summary => 'Unpivots data from the specified range, converting columns to rows.',
         params => $params,
         returns => 'string',
     };
@@ -159,21 +159,21 @@ __PACKAGE__->method_documentation({
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => 'The worksheet name.',
+     	description => 'The worksheet name containing the data to unpivot.',
      	format => '',
      	read_only => '',
      		},
      'cell_area' => {
      	datatype => 'string',
      	base_name => 'cellArea',
-     	description => 'A specified data range',
+     	description => 'The cell range to unpivot (e.g., "A1:D10").',
      	format => '',
      	read_only => '',
      		},
      'skip_empty_value' => {
      	datatype => 'string',
      	base_name => 'skipEmptyValue',
-     	description => '',
+     	description => 'If true, empty cells are skipped in the output. Default is true.',
      	format => '',
      	read_only => '',
      		},

@@ -73,7 +73,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'get_spreadsheet_structure' } = { 
-    	summary => 'Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.',
+    	summary => 'Extracts the structural information of a local spreadsheet as a JSON object.',
         params => $params,
         returns => 'string',
     };

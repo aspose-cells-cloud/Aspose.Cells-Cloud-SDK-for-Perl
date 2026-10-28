@@ -333,6 +333,47 @@ sub aggregate_cells_by_color{
 }
 
 #
+# AggregateCellsByColor_DeprecatedRequest
+#
+# Deprecated: Use String) instead.This endpoint exists only for backward compatibility with clients that used the misspelledroute calculate/aggergate/color. It will be removed in a future major version.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string     
+# @range  string     
+# @operation  string     
+# @colorPosition  string     
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'AggregateCellsByColor_DeprecatedRequest',
+            description => 'AggregateCellsByColor_Deprecated Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'aggregate_cells_by_color__deprecated' } = { 
+    	summary => 'Deprecated: Use String) instead.This endpoint exists only for backward compatibility with clients that used the misspelledroute calculate/aggergate/color. It will be removed in a future major version.',
+        params => $params,
+        returns => 'AggregateResultByColorResponse',
+    };
+}
+#
+# @return AggregateResultByColorResponse
+#
+sub aggregate_cells_by_color__deprecated{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('AggregateResultByColorResponse', $response);
+    return $_response_object;
+}
+
+#
 # MathCalculateRequest
 #
 # 
@@ -376,11 +417,11 @@ sub math_calculate{
 #
 # CalculationFormulaRequest
 #
-# 
+# Calculates a formula expression and returns the result.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @worksheet  string (required)    
-# @formula  string (required)    
+# @worksheet  string (required)  The worksheet name where the formula will be evaluated.  
+# @formula  string (required)  The formula expression to calculate (e.g., "SUM(A1:A10)" or "=A1+B1").  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -393,7 +434,7 @@ sub math_calculate{
        }
     };
     __PACKAGE__->method_documentation->{ 'calculation_formula' } = { 
-    	summary => '',
+    	summary => 'Calculates a formula expression and returns the result.',
         params => $params,
         returns => 'string',
     };
@@ -2588,10 +2629,10 @@ sub get_merged_cells_in_remoted_worksheet{
 #
 # GetMergedCellsInWorksheetRequest
 #
-# Get all merged cell area form a local spreadsheet worksheet.
+# Get all merged cell areas from a local spreadsheet worksheet.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @worksheet  string (required)    
+# @worksheet  string (required)  The worksheet name to query for merged cells.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
 #
@@ -2604,7 +2645,7 @@ sub get_merged_cells_in_remoted_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_merged_cells_in_worksheet' } = { 
-    	summary => 'Get all merged cell area form a local spreadsheet worksheet.',
+    	summary => 'Get all merged cell areas from a local spreadsheet worksheet.',
         params => $params,
         returns => 'ARRAY[CellArea]',
     };
@@ -2626,7 +2667,7 @@ sub get_merged_cells_in_worksheet{
 #
 # AcceptAllRevisionsRequest
 #
-# 
+# Accepts all tracked changes (revisions) in the local spreadsheet.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
@@ -2644,7 +2685,7 @@ sub get_merged_cells_in_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'accept_all_revisions' } = { 
-    	summary => '',
+    	summary => 'Accepts all tracked changes (revisions) in the local spreadsheet.',
         params => $params,
         returns => 'string',
     };
@@ -2666,10 +2707,10 @@ sub accept_all_revisions{
 #
 # AcceptAllRevisionsInRemoteSpreadsheetRequest
 #
+# Accepts all tracked changes (revisions) in a remote spreadsheet.
 # 
-# 
-# @name  string (required)    
-# @folder  string     
+# @name  string (required)  The name of the workbook file.  
+# @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
@@ -2686,7 +2727,7 @@ sub accept_all_revisions{
        }
     };
     __PACKAGE__->method_documentation->{ 'accept_all_revisions_in_remote_spreadsheet' } = { 
-    	summary => '',
+    	summary => 'Accepts all tracked changes (revisions) in a remote spreadsheet.',
         params => $params,
         returns => 'string',
     };
@@ -2708,7 +2749,7 @@ sub accept_all_revisions_in_remote_spreadsheet{
 #
 # GetSpreadsheetStructureRequest
 #
-# Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.
+# Extracts the structural information of a local spreadsheet as a JSON object.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -2723,7 +2764,7 @@ sub accept_all_revisions_in_remote_spreadsheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_spreadsheet_structure' } = { 
-    	summary => 'Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.',
+    	summary => 'Extracts the structural information of a local spreadsheet as a JSON object.',
         params => $params,
         returns => 'string',
     };
@@ -2745,10 +2786,10 @@ sub get_spreadsheet_structure{
 #
 # GetStructureInRemoteSpreadsheetRequest
 #
-# Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.
+# Extracts the structural information of a remote spreadsheet as a JSON object.
 # 
-# @name  string (required)    
-# @folder  string     
+# @name  string (required)  The name of the workbook file.  
+# @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
 # @password  string   The password for opening spreadsheet file.   
@@ -2762,7 +2803,7 @@ sub get_spreadsheet_structure{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_structure_in_remote_spreadsheet' } = { 
-    	summary => 'Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.',
+    	summary => 'Extracts the structural information of a remote spreadsheet as a JSON object.',
         params => $params,
         returns => 'string',
     };
@@ -2864,10 +2905,10 @@ sub unprotect_spreadsheet{
 #
 # SpreadsheetDigitalsignatureRequest
 #
-# 
+# Adds digital signatures to Excel spreadsheets using X.509 certificates (.pfx files) for document authentication and integrity verification.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @password  string (required)    
+# @password  string (required)  The password for the digital certificate (.pfx file).  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.   
@@ -2881,7 +2922,7 @@ sub unprotect_spreadsheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'spreadsheet_digitalsignature' } = { 
-    	summary => '',
+    	summary => 'Adds digital signatures to Excel spreadsheets using X.509 certificates (.pfx files) for document authentication and integrity verification.',
         params => $params,
         returns => 'string',
     };
@@ -2903,7 +2944,7 @@ sub spreadsheet_digitalsignature{
 #
 # SmartMarkerTemplateRequest
 #
-# 
+# Generates reports using Smart Marker template technology with JSON data.
 # 
 # @datafile  string (required)  Upload smartmarker template json data file.  
 # @templatefile  string (required)  Upload smartmarker template file.  
@@ -2919,7 +2960,7 @@ sub spreadsheet_digitalsignature{
        }
     };
     __PACKAGE__->method_documentation->{ 'smart_marker_template' } = { 
-    	summary => '',
+    	summary => 'Generates reports using Smart Marker template technology with JSON data.',
         params => $params,
         returns => 'string',
     };
@@ -2967,6 +3008,45 @@ sub smart_marker_template{
 # @return SearchResponse
 #
 sub search_all_text_items_in_remote_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('SearchResponse', $response);
+    return $_response_object;
+}
+
+#
+# SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @folder  string (required)    
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest',
+            description => 'SearchAllTextItemsInRemoteSpreadsheet_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_all_text_items_in_remote_spreadsheet__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'SearchResponse',
+    };
+}
+#
+# @return SearchResponse
+#
+sub search_all_text_items_in_remote_spreadsheet__legacy_put{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -3097,6 +3177,47 @@ sub search_content_in_remote_spreadsheet{
 }
 
 #
+# SearchContentInRemoteSpreadsheet_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @searchText  string (required)    
+# @ignoringCase  boolean     
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchContentInRemoteSpreadsheet_LegacyPutRequest',
+            description => 'SearchContentInRemoteSpreadsheet_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_content_in_remote_spreadsheet__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'SearchResponse',
+    };
+}
+#
+# @return SearchResponse
+#
+sub search_content_in_remote_spreadsheet__legacy_put{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('SearchResponse', $response);
+    return $_response_object;
+}
+
+#
 # SearchContentInRemoteWorksheetRequest
 #
 # Search text in the worksheet of remoted spreadsheet.
@@ -3104,7 +3225,7 @@ sub search_content_in_remote_spreadsheet{
 # @name  string (required)  Specify the search workbook file name.  
 # @worksheet  string (required)  Specify the search worksheet name.  
 # @searchText  string (required)  Specify the search content.  
-# @ignoringCase  boolean   Ignore the text of the search.  
+# @ignoringCase  boolean   Ignore the text case of the search. Default is true.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -3139,15 +3260,57 @@ sub search_content_in_remote_worksheet{
 }
 
 #
+# SearchContentInRemoteWorksheet_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @worksheet  string (required)    
+# @searchText  string (required)    
+# @ignoringCase  boolean     
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchContentInRemoteWorksheet_LegacyPutRequest',
+            description => 'SearchContentInRemoteWorksheet_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_content_in_remote_worksheet__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'SearchResponse',
+    };
+}
+#
+# @return SearchResponse
+#
+sub search_content_in_remote_worksheet__legacy_put{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('SearchResponse', $response);
+    return $_response_object;
+}
+
+#
 # SearchContentInRemoteRangeRequest
 #
 # Search text in the range of remoted spreadsheet.
 # 
 # @name  string (required)  Specify the search workbook file name.  
 # @worksheet  string (required)  Specify the search worksheet name.  
-# @cellArea  string (required)  Specify the search cell area.  
+# @cellArea  string (required)  Specify the search cell area (e.g., "A1:C10").  
 # @searchText  string (required)  Specify the search content.  
-# @ignoringCase  boolean   Ignore the text of the search.  
+# @ignoringCase  boolean   Ignore the text case of the search. Default is true.  
 # @folder  string   The folder path where the workbook is stored.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -3171,6 +3334,49 @@ sub search_content_in_remote_worksheet{
 # @return SearchResponse
 #
 sub search_content_in_remote_range{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('SearchResponse', $response);
+    return $_response_object;
+}
+
+#
+# SearchContentInRemoteRange_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @worksheet  string (required)    
+# @cellArea  string (required)    
+# @searchText  string (required)    
+# @ignoringCase  boolean     
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchContentInRemoteRange_LegacyPutRequest',
+            description => 'SearchContentInRemoteRange_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_content_in_remote_range__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'SearchResponse',
+    };
+}
+#
+# @return SearchResponse
+#
+sub search_content_in_remote_range__legacy_put{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -3429,6 +3635,47 @@ sub search_broken_links_in_remote_spreadsheet{
 }
 
 #
+# SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @worksheet  string     
+# @cellArea  string     
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest',
+            description => 'SearchBrokenLinksInRemoteSpreadsheet_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_broken_links_in_remote_spreadsheet__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'BrokenLinksResponse',
+    };
+}
+#
+# @return BrokenLinksResponse
+#
+sub search_broken_links_in_remote_spreadsheet__legacy_put{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BrokenLinksResponse', $response);
+    return $_response_object;
+}
+
+#
 # SearchBrokenLinksInRemoteWorksheetRequest
 #
 # Search broken links in the worksheet of remoted spreadsheet.
@@ -3458,6 +3705,46 @@ sub search_broken_links_in_remote_spreadsheet{
 # @return BrokenLinksResponse
 #
 sub search_broken_links_in_remote_worksheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BrokenLinksResponse', $response);
+    return $_response_object;
+}
+
+#
+# SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @worksheet  string (required)    
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest',
+            description => 'SearchBrokenLinksInRemoteWorksheet_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_broken_links_in_remote_worksheet__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'BrokenLinksResponse',
+    };
+}
+#
+# @return BrokenLinksResponse
+#
+sub search_broken_links_in_remote_worksheet__legacy_put{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -3499,6 +3786,47 @@ sub search_broken_links_in_remote_worksheet{
 # @return BrokenLinksResponse
 #
 sub search_broken_links_in_remote_range{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BrokenLinksResponse', $response);
+    return $_response_object;
+}
+
+#
+# SearchBrokenLinksInRemoteRange_LegacyPutRequest
+#
+# Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.
+# 
+# @name  string (required)    
+# @worksheet  string (required)    
+# @cellArea  string (required)    
+# @folder  string     
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'SearchBrokenLinksInRemoteRange_LegacyPutRequest',
+            description => 'SearchBrokenLinksInRemoteRange_LegacyPut Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'search_broken_links_in_remote_range__legacy_put' } = { 
+    	summary => 'Deprecated PUT route for String).This endpoint exists only for backward compatibility with clients that used the PUT verb on this read-only route.It will be removed in a future major version.',
+        params => $params,
+        returns => 'BrokenLinksResponse',
+    };
+}
+#
+# @return BrokenLinksResponse
+#
+sub search_broken_links_in_remote_range__legacy_put{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -4345,7 +4673,7 @@ sub remove_spreadsheet_blank_rows{
 #
 # RemoveSpreadsheetBlankColumnsRequest
 #
-# Delete all blank rows that do not contain any data or other objects.
+# Delete all blank columns that do not contain any data or other objects.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
@@ -4362,7 +4690,7 @@ sub remove_spreadsheet_blank_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'remove_spreadsheet_blank_columns' } = { 
-    	summary => 'Delete all blank rows that do not contain any data or other objects.',
+    	summary => 'Delete all blank columns that do not contain any data or other objects.',
         params => $params,
         returns => 'string',
     };
@@ -4550,11 +4878,11 @@ sub flip_data{
 #
 # TransposeDataRequest
 #
-# Switch rows and columns in the spreadsheet.
+# Transposes data in the specified range, switching rows and columns.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @worksheet  string (required)  The worksheet name.  
-# @cellArea  string (required)  A specified data range  
+# @worksheet  string (required)  The worksheet name containing the data to transpose.  
+# @cellArea  string (required)  The cell range to transpose (e.g., "A1:C10").  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -4569,7 +4897,7 @@ sub flip_data{
        }
     };
     __PACKAGE__->method_documentation->{ 'transpose_data' } = { 
-    	summary => 'Switch rows and columns in the spreadsheet.',
+    	summary => 'Transposes data in the specified range, switching rows and columns.',
         params => $params,
         returns => 'string',
     };
@@ -4591,12 +4919,12 @@ sub transpose_data{
 #
 # UnpivotRangeRequest
 #
-# Switch rows and columns in the spreadsheet.
+# Unpivots data from the specified range, converting columns to rows.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @worksheet  string (required)  The worksheet name.  
-# @cellArea  string (required)  A specified data range  
-# @skipEmptyValue  boolean     
+# @worksheet  string (required)  The worksheet name containing the data to unpivot.  
+# @cellArea  string (required)  The cell range to unpivot (e.g., "A1:D10").  
+# @skipEmptyValue  boolean   If true, empty cells are skipped in the output. Default is true.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -4611,7 +4939,7 @@ sub transpose_data{
        }
     };
     __PACKAGE__->method_documentation->{ 'unpivot_range' } = { 
-    	summary => 'Switch rows and columns in the spreadsheet.',
+    	summary => 'Unpivots data from the specified range, converting columns to rows.',
         params => $params,
         returns => 'string',
     };
@@ -4633,12 +4961,12 @@ sub unpivot_range{
 #
 # UnpivotTableRequest
 #
-# Switch rows and columns in the spreadsheet.
+# Unpivots data from the specified table, converting columns to rows.
 # 
 # @Spreadsheet  string (required)  Upload spreadsheet file.  
-# @worksheet  string (required)  The worksheet name.  
-# @index  int (required)  A specified data range  
-# @skipEmptyValue  boolean     
+# @worksheet  string (required)  The worksheet name containing the table to unpivot.  
+# @index  int (required)  The zero-based index of the table (ListObject) to unpivot.  
+# @skipEmptyValue  boolean   If true, empty cells are skipped in the output. Default is true.  
 # @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @outStorageName  string   Output file Storage Name.  
 # @region  string   Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  
@@ -4653,7 +4981,7 @@ sub unpivot_range{
        }
     };
     __PACKAGE__->method_documentation->{ 'unpivot_table' } = { 
-    	summary => 'Switch rows and columns in the spreadsheet.',
+    	summary => 'Unpivots data from the specified table, converting columns to rows.',
         params => $params,
         returns => 'string',
     };

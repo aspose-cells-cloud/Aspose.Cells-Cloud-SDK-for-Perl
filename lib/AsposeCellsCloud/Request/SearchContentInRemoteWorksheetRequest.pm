@@ -63,7 +63,7 @@ sub new {
 # SearchContentInRemoteWorksheetRequest.name : Specify the search workbook file name.  ,
 # SearchContentInRemoteWorksheetRequest.worksheet : Specify the search worksheet name.  ,
 # SearchContentInRemoteWorksheetRequest.searchText : Specify the search content.  ,
-# SearchContentInRemoteWorksheetRequest.ignoringCase : Ignore the text of the search.  ,
+# SearchContentInRemoteWorksheetRequest.ignoringCase : Ignore the text case of the search. Default is true.  ,
 # SearchContentInRemoteWorksheetRequest.folder : The folder path where the workbook is stored.  ,
 # SearchContentInRemoteWorksheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
 # SearchContentInRemoteWorksheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
@@ -92,7 +92,7 @@ sub run_http_request {
     # parse inputs
     my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/search/content';
 
-    my $_method = 'PUT';
+    my $_method = 'GET';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -175,7 +175,7 @@ __PACKAGE__->method_documentation({
      'ignoring_case' => {
      	datatype => 'string',
      	base_name => 'ignoringCase',
-     	description => 'Ignore the text of the search.',
+     	description => 'Ignore the text case of the search. Default is true.',
      	format => '',
      	read_only => '',
      		},

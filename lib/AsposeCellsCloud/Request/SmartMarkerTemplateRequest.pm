@@ -74,7 +74,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'smart_marker_template' } = { 
-    	summary => '',
+    	summary => 'Generates reports using Smart Marker template technology with JSON data.',
         params => $params,
         returns => 'string',
     };

@@ -1,4 +1,5 @@
-![Aspose.Cells Cloud SDK for Perl](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-26.9-green?style=for-the-badge&logo=perl) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/perl/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/badge/License-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) ![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)
+```markdown
+![Aspose.Cells Cloud SDK for Perl](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-26.10-green?style=for-the-badge&logo=perl) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/perl/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/badge/License-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) ![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)
 
 <p align="center">
   <a href="#english">English</a> |
@@ -125,14 +126,18 @@ close($fh);
 
 | **Summary**                                                                                                   | **Category** |
 | :------------------------------------------------------------------------------------------------------------ | :----------- |
-| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement  |
-| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug  |
+| Refactor SearchController.cs: replace 7 remote read endpoints with [HttpGet] and remove deprecated forwarder | Improvement  |
+| Fix typo in CalculateController.cs: correct route 'aggergate' to 'aggregate' | Bug  |
+| Fix operationName copy-paste errors in ManagementController.cs | Bug  |
+| Mark StatisticalController.cs as obsolete | Improvement  |
+| Security & Stability Fixes for Aspose.Cells Cloud API | Improvement  |
+| Add Exception Chain Support to CellsApiException and HttpWebException | New Feature  |
 
 ## Available SDKs
 
 The Aspose.Cells Cloud SDK is available in multiple popular programming languages, enabling developers to integrate spreadsheet processing capabilities across various development environments.
 
-[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25)
+[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v26)
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
@@ -264,18 +269,22 @@ close($fh);
 - **数据导入/导出**：支持从各种数据源导入数据到电子表格，以及将电子表格数据导出到其他格式。
 - **安全管理**：提供数据加密、访问控制和权限管理等一系列安全功能，保障电子表格数据的安全性和完整性。
 
-## 版本 26.9 的功能与增强
+## 版本 26.10 的功能与增强
 
-| **摘要** | **类别** |
-| :--- | :--- |
-| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
-| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
+| **摘要**                                                                                                   | **类别** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| 重构 SearchController.cs：将 7 个远程读取终结点替换为 [HttpGet] 并移除已弃用的转发器 | 改进  |
+| 修复 CalculateController.cs 中的拼写错误：将路由 'aggergate' 更正为 'aggregate' | Bug  |
+| 修复 ManagementController.cs 中的 operationName 复制粘贴错误 | Bug  |
+| 将 StatisticalController.cs 标记为已弃用 | 改进  |
+| Aspose.Cells Cloud API 的安全与稳定性修复 | 改进  |
+| 为 CellsApiException 和 HttpWebException 添加异常链支持 | 新功能  |
 
 ## 可用的 SDK
 
 Aspose.Cells Cloud SDK 提供多种流行编程语言版本，使开发者能够在各种开发环境中集成电子表格处理功能。
 
-[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25)
+[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v26)
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
@@ -369,9 +378,9 @@ close($fh);
 | [TIFF](https://docs.fileformat.com/image/tiff/)                   | Tagged Image File Format。                                                                                                    |              | &radic;  |
 | [PNG](https://docs.fileformat.com/image/png/)                     | Portable Network Graphics Format。                                                                                            |              | &radic;  |
 | [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format.                                                                                                          |              | &radic;  |
-| [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced Metafile Format。                                                                                                    |              | &radic;  |
+| [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced Metafile Format.                                                                                                     |              | &radic;  |
 | [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG は非可逆圧縮を使用する画像形式です。                                                                                    |              | &radic;  |
-| [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format。                                                                                                |              | &radic;  |
+| [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format.                                                                                                |              | &radic;  |
 | [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Markdown ドキュメントを表します。                                                                                              |              | &radic;  |
 | [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | OpenOffice および StarOffice で使用される XML ベースの形式。                                                                   | &radic;      | &radic;  |
 | [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | フラット XML として保存された Open Document 形式。                                                                             | &radic;      | &radic;  |
@@ -380,9 +389,9 @@ close($fh);
 | [OTS](https://docs.fileformat.com/spreadsheet/ots/)               | OTS（OpenDocument スプレッドシート）。                                                                                         | &radic;      | &radic;  |
 | [XML](https://docs.fileformat.com/web/xml/)                       | XML ファイル。                                                                                                                | &radic;      | &radic;  |
 | [HTM](https://docs.fileformat.com/web/htm/)                       | HTM ファイル。                                                                                                                | &radic;      | &radic;  |
-| [TIF](https://docs.fileformat.com/image/tiff/)                    | Tagged Image File Format。                                                                                                    |              | &radic;  |
-| [WMF](https://docs.fileformat.com/image/wmf/)                     | Windows Metafile Format。                                                                                                     |              | &radic;  |
-| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | Printer Command Language Format。                                                                                             |              | &radic;  |
+| [TIF](https://docs.fileformat.com/image/tiff/)                    | Tagged Image File Format.                                                                                                    |              | &radic;  |
+| [WMF](https://docs.fileformat.com/image/wmf/)                     | Windows Metafile Format.                                                                                                      |              | &radic;  |
+| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | Printer Command Language Format.                                                                                             |              | &radic;  |
 | [AZW3](https://docs.fileformat.com/ebook/azw3/)                   | AZW3/KF8 ファイル形式。                                                                                                       |              | &radic;  |
 | [EPUB](https://docs.fileformat.com/ebook/epub/)                   | EPUB ファイル形式。                                                                                                           |              | &radic;  |
 | [DBF](https://docs.fileformat.com/database/dbf/)                  | データベースファイル形式。                                                                                                    |              | &radic;  |
@@ -407,18 +416,22 @@ close($fh);
 - **データのインポート/エクスポート**: さまざまなソースからスプレッドシートへのデータインポート、およびスプレッドシートデータの他の形式へのエクスポートを容易にします。
 - **セキュリティ管理**: データ暗号化、アクセス制御、権限管理などのセキュリティ機能を提供し、スプレッドシートデータのセキュリティと整合性を保護します。
 
-## バージョン 26.9 の機能と拡張
+## バージョン 26.10 の機能と拡張
 
-| **概要** | **カテゴリ** |
-| :--- | :--- |
-| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
-| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
+| **概要**                                                                                                   | **カテゴリ** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| SearchController.cs のリファクタリング：7 つのリモート読み取りエンドポイントを [HttpGet] に置き換え、非推奨の転送子を削除 | 改善  |
+| CalculateController.cs の誤字修正：ルート 'aggergate' を 'aggregate' に修正 | バグ  |
+| ManagementController.cs の operationName のコピペエラー修正 | バグ  |
+| StatisticalController.cs を非推奨としてマーク | 改善  |
+| Aspose.Cells Cloud API のセキュリティおよび安定性修正 | 改善  |
+| CellsApiException および HttpWebException に例外連鎖サポートを追加 | 新機能  |
 
 ## 利用可能な SDK
 
 Aspose.Cells Cloud SDK は複数の一般的なプログラミング言語で利用可能で、開発者はさまざまな開発環境でスプレッドシート処理機能を統合できます。
 
-[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25)
+[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v26)
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
@@ -516,7 +529,7 @@ close($fh);
 | [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG ist ein Bildformat, das verlustbehaftete Komprimierung verwendet.                                                                    |           | &radic;       |
 | [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format.                                                                                                             |           | &radic;       |
 | [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Stellt ein Markdown-Dokument dar.                                                                                                          |           | &radic;       |
-| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | Ein XML-basierter Format, das von OpenOffice und StarOffice verwendet wird.                                                               | &radic;   | &radic;       |
+| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | Ein XML-basierter Format, der von OpenOffice und StarOffice verwendet wird.                                                               | &radic;   | &radic;       |
 | [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | Ein als flaches XML gespeichertes Open Document-Format.                                                                                   | &radic;   | &radic;       |
 | [DOCX](https://docs.fileformat.com/word-processing/docx/)         | Ein bekanntes Format für Microsoft Word-Dokumente, das XML- und Binärdateien kombiniert.                                                   |           | &radic;       |
 | [PPTX](https://docs.fileformat.com/presentation/pptx/)            | Das PPTX-Format basiert auf dem Microsoft PowerPoint Open XML-Präsentationsdateiformat.                                                    |           | &radic;       |
@@ -550,18 +563,22 @@ close($fh);
 - **Datenimport/-export**: Ermöglicht den Import von Daten aus verschiedenen Quellen in Tabellen und den Export von Tabellendaten in andere Formate.
 - **Sicherheitsmanagement**: Bietet eine Reihe von Sicherheitsfunktionen wie Datenverschlüsselung, Zugriffskontrolle und Berechtigungsverwaltung zum Schutz der Sicherheit und Integrität von Tabellendaten.
 
-## Funktionen & Erweiterungen in Version 26.9
+## Funktionen & Erweiterungen in Version 26.10
 
-| **Zusammenfassung**                                             | **Kategorie**  |
-| :-------------------------------------------------------------- | :------------- |
-| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
-| Fix code-gen/swagger specification for Aspose.Cells Cloud.      | Bug |
+| **Zusammenfassung**                                                                                                   | **Kategorie** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| Refactor SearchController.cs: replace 7 remote read endpoints with [HttpGet] and remove deprecated forwarder | Improvement  |
+| Fix typo in CalculateController.cs: correct route 'aggergate' to 'aggregate' | Bug  |
+| Fix operationName copy-paste errors in ManagementController.cs | Bug  |
+| Mark StatisticalController.cs as obsolete | Improvement  |
+| Security & Stability Fixes for Aspose.Cells Cloud API | Improvement  |
+| Add Exception Chain Support to CellsApiException and HttpWebException | New Feature  |
 
 ## Verfügbare SDKs
 
 Das Aspose.Cells Cloud SDK ist in mehreren gängigen Programmiersprachen verfügbar und ermöglicht Entwicklern die Integration von Tabellenverarbeitungsfunktionen in verschiedene Entwicklungsumgebungen.
 
-[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25)
+[![Go](https://img.shields.io/badge/Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) [![Go](https://img.shields.io/badge/Go-Install%20go%20get%20package--asposecellscloud-%2300ADD8?logo=go&style=for-the-badge)](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v26)
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells%20Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
@@ -578,3 +595,4 @@ Das Aspose.Cells Cloud SDK ist in mehreren gängigen Programmiersprachen verfüg
 [![Ruby](https://img.shields.io/badge/Ruby-CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-ruby) [![Ruby](https://img.shields.io/badge/Gem-install%20aspose__cells__cloud-red?logo=ruby&style=for-the-badge)](https://rubygems.org/gems/aspose_cells_cloud)
 
 ## [Versionsverlauf](CHANGELOG.md)
+```

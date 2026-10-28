@@ -61,7 +61,7 @@ sub new {
 
 # Run Operation Request
 # GetMergedCellsInWorksheetRequest.Spreadsheet : Upload spreadsheet file.  ,
-# GetMergedCellsInWorksheetRequest.worksheet :   ,
+# GetMergedCellsInWorksheetRequest.worksheet : The worksheet name to query for merged cells.  ,
 # GetMergedCellsInWorksheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # GetMergedCellsInWorksheetRequest.password : The password for opening spreadsheet file.   
 
@@ -74,7 +74,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'get_merged_cells_in_worksheet' } = { 
-    	summary => 'Get all merged cell area form a local spreadsheet worksheet.',
+    	summary => 'Get all merged cell areas from a local spreadsheet worksheet.',
         params => $params,
         returns => 'ARRAY[CellArea]',
     };
@@ -139,7 +139,7 @@ __PACKAGE__->method_documentation({
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => '',
+     	description => 'The worksheet name to query for merged cells.',
      	format => '',
      	read_only => '',
      		},

@@ -60,8 +60,8 @@ sub new {
 
 
 # Run Operation Request
-# GetStructureInRemoteSpreadsheetRequest.name :   ,
-# GetStructureInRemoteSpreadsheetRequest.folder :   ,
+# GetStructureInRemoteSpreadsheetRequest.name : The name of the workbook file.  ,
+# GetStructureInRemoteSpreadsheetRequest.folder : The folder path where the workbook is stored.  ,
 # GetStructureInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
 # GetStructureInRemoteSpreadsheetRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # GetStructureInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
@@ -75,7 +75,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'get_structure_in_remote_spreadsheet' } = { 
-    	summary => 'Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.',
+    	summary => 'Extracts the structural information of a remote spreadsheet as a JSON object.',
         params => $params,
         returns => 'string',
     };
@@ -137,14 +137,14 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => '',
+     	description => 'The name of the workbook file.',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => '',
+     	description => 'The folder path where the workbook is stored.',
      	format => '',
      	read_only => '',
      		},

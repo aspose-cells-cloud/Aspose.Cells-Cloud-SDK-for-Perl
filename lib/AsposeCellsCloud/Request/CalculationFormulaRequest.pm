@@ -61,8 +61,8 @@ sub new {
 
 # Run Operation Request
 # CalculationFormulaRequest.Spreadsheet : Upload spreadsheet file.  ,
-# CalculationFormulaRequest.worksheet :   ,
-# CalculationFormulaRequest.formula :   ,
+# CalculationFormulaRequest.worksheet : The worksheet name where the formula will be evaluated.  ,
+# CalculationFormulaRequest.formula : The formula expression to calculate (e.g., "SUM(A1:A10)" or "=A1+B1").  ,
 # CalculationFormulaRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
 # CalculationFormulaRequest.password : The password for opening spreadsheet file.   
 
@@ -75,7 +75,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'calculation_formula' } = { 
-    	summary => '',
+    	summary => 'Calculates a formula expression and returns the result.',
         params => $params,
         returns => 'string',
     };
@@ -144,14 +144,14 @@ __PACKAGE__->method_documentation({
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => '',
+     	description => 'The worksheet name where the formula will be evaluated.',
      	format => '',
      	read_only => '',
      		},
      'formula' => {
      	datatype => 'string',
      	base_name => 'formula',
-     	description => '',
+     	description => 'The formula expression to calculate (e.g., "SUM(A1:A10)" or "=A1+B1").',
      	format => '',
      	read_only => '',
      		},

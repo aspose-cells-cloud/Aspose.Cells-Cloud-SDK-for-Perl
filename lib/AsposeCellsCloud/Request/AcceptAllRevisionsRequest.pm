@@ -76,7 +76,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'accept_all_revisions' } = { 
-    	summary => '',
+    	summary => 'Accepts all tracked changes (revisions) in the local spreadsheet.',
         params => $params,
         returns => 'string',
     };

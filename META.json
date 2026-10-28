@@ -63,7 +63,7 @@
       },
       "AsposeCellsCloud::CellsApi" : {
          "file" : "lib/AsposeCellsCloud/CellsApi.pm",
-         "version" : "26.9"
+         "version" : "26.10.5"
       },    
       "AsposeCellsCloud::Configuration" : {
          "file" : "lib/AsposeCellsCloud/Configuration.pm"
@@ -97,6 +97,9 @@
       },
       "AsposeCellsCloud::Object::GoogleDriveStorageFile" : {
          "file" : "lib/AsposeCellsCloud/Object/GoogleDriveStorageFile.pm"
+      },
+      "AsposeCellsCloud::Object::SharedDriveInfo" : {
+         "file" : "lib/AsposeCellsCloud/Object/SharedDriveInfo.pm"
       },
       "AsposeCellsCloud::Object::AggregateResultByColor" : {
          "file" : "lib/AsposeCellsCloud/Object/AggregateResultByColor.pm"
@@ -1445,6 +1448,9 @@
       "AsposeCellsCloud::Request::AggregateCellsByColorRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/AggregateCellsByColorRequest.pm"
       },
+      "AsposeCellsCloud::Request::AggregateCellsByColor_DeprecatedRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/AggregateCellsByColor_DeprecatedRequest.pm"
+      },
       "AsposeCellsCloud::Request::MathCalculateRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/MathCalculateRequest.pm"
       },
@@ -1634,6 +1640,9 @@
       "AsposeCellsCloud::Request::SearchAllTextItemsInRemoteSpreadsheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchAllTextItemsInRemoteSpreadsheetRequest.pm"
       },
+      "AsposeCellsCloud::Request::SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest.pm"
+      },
       "AsposeCellsCloud::Request::SearchSpreadsheetAllTextItemsRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchSpreadsheetAllTextItemsRequest.pm"
       },
@@ -1643,11 +1652,20 @@
       "AsposeCellsCloud::Request::SearchContentInRemoteSpreadsheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchContentInRemoteSpreadsheetRequest.pm"
       },
+      "AsposeCellsCloud::Request::SearchContentInRemoteSpreadsheet_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchContentInRemoteSpreadsheet_LegacyPutRequest.pm"
+      },
       "AsposeCellsCloud::Request::SearchContentInRemoteWorksheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchContentInRemoteWorksheetRequest.pm"
       },
+      "AsposeCellsCloud::Request::SearchContentInRemoteWorksheet_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchContentInRemoteWorksheet_LegacyPutRequest.pm"
+      },
       "AsposeCellsCloud::Request::SearchContentInRemoteRangeRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchContentInRemoteRangeRequest.pm"
+      },
+      "AsposeCellsCloud::Request::SearchContentInRemoteRange_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchContentInRemoteRange_LegacyPutRequest.pm"
       },
       "AsposeCellsCloud::Request::ReplaceSpreadsheetContentRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/ReplaceSpreadsheetContentRequest.pm"
@@ -1667,11 +1685,20 @@
       "AsposeCellsCloud::Request::SearchBrokenLinksInRemoteSpreadsheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteSpreadsheetRequest.pm"
       },
+      "AsposeCellsCloud::Request::SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest.pm"
+      },
       "AsposeCellsCloud::Request::SearchBrokenLinksInRemoteWorksheetRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteWorksheetRequest.pm"
       },
+      "AsposeCellsCloud::Request::SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest.pm"
+      },
       "AsposeCellsCloud::Request::SearchBrokenLinksInRemoteRangeRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteRangeRequest.pm"
+      },
+      "AsposeCellsCloud::Request::SearchBrokenLinksInRemoteRange_LegacyPutRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteRange_LegacyPutRequest.pm"
       },
       "AsposeCellsCloud::Request::SpecRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/SpecRequest.pm"
@@ -2824,6 +2851,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "26.9",
+   "version" : "26.10.5",
    "x_serialization_backend" : "JSON::PP version 2.27400"
 }

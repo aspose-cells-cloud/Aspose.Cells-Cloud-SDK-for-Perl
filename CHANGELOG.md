@@ -1,5 +1,22 @@
 # Release History Version
 
+## Feature & Enhancements in Version v26.9
+
+| **Summary** | **Category** |
+| :--- | :--- |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
+
+
+-----------------------
+
+## Features and Enhancements
+
+| **Summary**                                                                                                   | **Category** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement  |
+| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug  |
+
 ## Features & Enhancements in Version 26.9
 
 | **Summary** | **Category** |

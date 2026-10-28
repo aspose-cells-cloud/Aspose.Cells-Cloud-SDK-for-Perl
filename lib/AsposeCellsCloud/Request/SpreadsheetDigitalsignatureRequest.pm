@@ -61,7 +61,7 @@ sub new {
 
 # Run Operation Request
 # SpreadsheetDigitalsignatureRequest.Spreadsheet : Upload spreadsheet file.  ,
-# SpreadsheetDigitalsignatureRequest.password :   ,
+# SpreadsheetDigitalsignatureRequest.password : The password for the digital certificate (.pfx file).  ,
 # SpreadsheetDigitalsignatureRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # SpreadsheetDigitalsignatureRequest.outStorageName : Output file Storage Name.  ,
 # SpreadsheetDigitalsignatureRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.   
@@ -75,7 +75,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'spreadsheet_digitalsignature' } = { 
-    	summary => '',
+    	summary => 'Adds digital signatures to Excel spreadsheets using X.509 certificates (.pfx files) for document authentication and integrity verification.',
         params => $params,
         returns => 'string',
     };
@@ -144,7 +144,7 @@ __PACKAGE__->method_documentation({
      'password' => {
      	datatype => 'string',
      	base_name => 'password',
-     	description => '',
+     	description => 'The password for the digital certificate (.pfx file).',
      	format => '',
      	read_only => '',
      		},

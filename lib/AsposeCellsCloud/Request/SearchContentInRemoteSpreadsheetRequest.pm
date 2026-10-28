@@ -91,7 +91,7 @@ sub run_http_request {
     # parse inputs
     my $_resource_path = 'v4.0/cells/{name}/search/content';
 
-    my $_method = 'PUT';
+    my $_method = 'GET';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};

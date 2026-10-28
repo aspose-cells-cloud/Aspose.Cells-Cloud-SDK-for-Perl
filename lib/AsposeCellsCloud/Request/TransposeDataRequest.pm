@@ -61,8 +61,8 @@ sub new {
 
 # Run Operation Request
 # TransposeDataRequest.Spreadsheet : Upload spreadsheet file.  ,
-# TransposeDataRequest.worksheet : The worksheet name.  ,
-# TransposeDataRequest.cellArea : A specified data range  ,
+# TransposeDataRequest.worksheet : The worksheet name containing the data to transpose.  ,
+# TransposeDataRequest.cellArea : The cell range to transpose (e.g., "A1:C10").  ,
 # TransposeDataRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # TransposeDataRequest.outStorageName : Output file Storage Name.  ,
 # TransposeDataRequest.region : Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior.  ,
@@ -77,7 +77,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'transpose_data' } = { 
-    	summary => 'Switch rows and columns in the spreadsheet.',
+    	summary => 'Transposes data in the specified range, switching rows and columns.',
         params => $params,
         returns => 'string',
     };
@@ -154,14 +154,14 @@ __PACKAGE__->method_documentation({
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => 'The worksheet name.',
+     	description => 'The worksheet name containing the data to transpose.',
      	format => '',
      	read_only => '',
      		},
      'cell_area' => {
      	datatype => 'string',
      	base_name => 'cellArea',
-     	description => 'A specified data range',
+     	description => 'The cell range to transpose (e.g., "A1:C10").',
      	format => '',
      	read_only => '',
      		},

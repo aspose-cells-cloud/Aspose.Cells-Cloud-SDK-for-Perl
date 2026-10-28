@@ -60,8 +60,8 @@ sub new {
 
 
 # Run Operation Request
-# AcceptAllRevisionsInRemoteSpreadsheetRequest.name :   ,
-# AcceptAllRevisionsInRemoteSpreadsheetRequest.folder :   ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.name : The name of the workbook file.  ,
+# AcceptAllRevisionsInRemoteSpreadsheetRequest.folder : The folder path where the workbook is stored.  ,
 # AcceptAllRevisionsInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
 # AcceptAllRevisionsInRemoteSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # AcceptAllRevisionsInRemoteSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
@@ -78,7 +78,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'accept_all_revisions_in_remote_spreadsheet' } = { 
-    	summary => '',
+    	summary => 'Accepts all tracked changes (revisions) in a remote spreadsheet.',
         params => $params,
         returns => 'string',
     };
@@ -152,14 +152,14 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => '',
+     	description => 'The name of the workbook file.',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => '',
+     	description => 'The folder path where the workbook is stored.',
      	format => '',
      	read_only => '',
      		},

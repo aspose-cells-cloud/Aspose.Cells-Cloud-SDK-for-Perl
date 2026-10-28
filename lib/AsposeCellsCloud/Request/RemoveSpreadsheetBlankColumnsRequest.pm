@@ -75,7 +75,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'remove_spreadsheet_blank_columns' } = { 
-    	summary => 'Delete all blank rows that do not contain any data or other objects.',
+    	summary => 'Delete all blank columns that do not contain any data or other objects.',
         params => $params,
         returns => 'string',
     };

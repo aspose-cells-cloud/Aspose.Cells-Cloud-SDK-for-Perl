@@ -89,7 +89,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/calculate/aggergate/color';
+    my $_resource_path = 'v4.0/cells/calculate/aggregate/color';
 
     my $_method = 'PUT';
     my $query_params = {};
